@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>보양닷컴 | 인테리어 보양 전문</title>
+<meta name="description" content="성남 광주 위례 인테리어 보양 전문 보양닷컴" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;color:#222;line-height:1.6}
+:root{--navy:#0d1b2a;--gold:#f5a623;--blue:#1a73e8}
+header{position:fixed;top:0;width:100%;background:#0d1b2a;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;z-index:1000}
+.logo{font-size:32px;font-weight:900}.logo span{color:var(--gold)}
+.call-btn{background:var(--gold);padding:14px 26px;border-radius:50px;color:#fff;font-weight:700;text-decoration:none}
+.hero{min-height:100vh;background:linear-gradient(rgba(13,27,42,.75),rgba(26,115,232,.55)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:120px 20px}
+.hero h1{font-size:64px;font-weight:900;margin-bottom:25px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:22px;margin-bottom:35px}
+.hero a{display:inline-block;background:var(--gold);padding:18px 40px;border-radius:60px;color:#fff;text-decoration:none;font-weight:800}
+.section{padding:90px 6%}
+.title{text-align:center;font-size:48px;font-weight:900;margin-bottom:50px;color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:#fff;border-radius:24px;padding:40px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+.card h3{font-size:30px;margin-bottom:15px;color:var(--navy)}
+.pricing{background:#f6f8fb}
+.price{font-size:34px;font-weight:900;color:var(--blue);margin-top:12px}
+.cta{background:linear-gradient(135deg,#f5a623,#e08e0b);text-align:center;color:#fff;padding:90px 20px}
+.cta h2{font-size:56px;margin-bottom:30px}
+.cta a{background:#0d1b2a;color:#fff;text-decoration:none;padding:20px 45px;border-radius:60px;font-size:28px;font-weight:900}
+footer{background:#0d1b2a;color:#fff;text-align:center;padding:50px 20px}
+.fab{position:fixed;right:25px;bottom:30px;background:var(--gold);color:#fff;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+@media(max-width:768px){.hero h1{font-size:42px}.title{font-size:34px}.cta h2{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">보양<span>닷컴</span></div>
+<a href="tel:01021873789" class="call-btn">📞 010-2187-3789</a>
+</header>
+
+<section class="hero">
+<div>
+<h1>계약 잘 나오는<br><span>프리미엄 보양 홈페이지</span></h1>
+<p>인테리어 보양 · 입주청소 전문<br>무료 견적 상담 가능합니다</p>
+<a href="tel:01021873789">지금 상담하기</a>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">전문 서비스</h2>
+<div class="cards">
+<div class="card">
+<h3>승강기 보양</h3>
+<p>엘리베이터 내부 전문 PP보드 보양 시공</p>
+</div>
+<div class="card">
+<h3>복도 보양</h3>
+<p>공용부 바닥 및 벽면 손상 방지 작업</p>
+</div>
+<div class="card">
+<h3>입주 청소</h3>
+<p>준공 청소 · 마감 청소 전문 시공</p>
+</div>
+</div>
+</section>
+
+<section class="section pricing">
+<h2 class="title">단가 안내</h2>
+<div class="cards">
+<div class="card"><h3>승강기 보양</h3><div class="price">협의 견적</div></div>
+<div class="card"><h3>복도 보양</h3><div class="price">협의 견적</div></div>
+<div class="card"><h3>입주 청소</h3><div class="price">현장 실측</div></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">보양닷컴 경쟁력</h2>
+<div class="cards">
+<div class="card"><h3>대표 직접 시공</h3><p>하청 없이 직접 책임 시공</p></div>
+<div class="card"><h3>빠른 일정 대응</h3><p>성남 광주 위례 신속 출동</p></div>
+<div class="card"><h3>실제 계약 잘 나오는 상담</h3><p>현장 맞춤 견적 상담</p></div>
+</div>
+</section>
+
+<section class="cta">
+<h2>무료 견적 문의</h2>
+<a href="tel:01021873789">010-2187-3789</a>
+</section>
+
+<footer>
+<h3>보양닷컴</h3>
+<p>성남 · 광주 · 위례 인테리어 보양 전문</p>
+<p>© All Rights Reserved</p>
+</footer>
+
+<a class="fab" href="tel:01021873789">☎</a>
+</body>
+</html>
