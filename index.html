@@ -1,98 +1,1338 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>보양닷컴 | 인테리어 보양 전문</title>
-<meta name="description" content="성남 광주 위례 인테리어 보양 전문 보양닷컴" />
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:#222;line-height:1.6}
-:root{--navy:#0d1b2a;--gold:#f5a623;--blue:#1a73e8}
-header{position:fixed;top:0;width:100%;background:#0d1b2a;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;z-index:1000}
-.logo{font-size:32px;font-weight:900}.logo span{color:var(--gold)}
-.call-btn{background:var(--gold);padding:14px 26px;border-radius:50px;color:#fff;font-weight:700;text-decoration:none}
-.hero{min-height:100vh;background:linear-gradient(rgba(13,27,42,.75),rgba(26,115,232,.55)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:120px 20px}
-.hero h1{font-size:64px;font-weight:900;margin-bottom:25px}
-.hero h1 span{color:var(--gold)}
-.hero p{font-size:22px;margin-bottom:35px}
-.hero a{display:inline-block;background:var(--gold);padding:18px 40px;border-radius:60px;color:#fff;text-decoration:none;font-weight:800}
-.section{padding:90px 6%}
-.title{text-align:center;font-size:48px;font-weight:900;margin-bottom:50px;color:var(--navy)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-.card{background:#fff;border-radius:24px;padding:40px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
-.card h3{font-size:30px;margin-bottom:15px;color:var(--navy)}
-.pricing{background:#f6f8fb}
-.price{font-size:34px;font-weight:900;color:var(--blue);margin-top:12px}
-.cta{background:linear-gradient(135deg,#f5a623,#e08e0b);text-align:center;color:#fff;padding:90px 20px}
-.cta h2{font-size:56px;margin-bottom:30px}
-.cta a{background:#0d1b2a;color:#fff;text-decoration:none;padding:20px 45px;border-radius:60px;font-size:28px;font-weight:900}
-footer{background:#0d1b2a;color:#fff;text-align:center;padding:50px 20px}
-.fab{position:fixed;right:25px;bottom:30px;background:var(--gold);color:#fff;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.2)}
-@media(max-width:768px){.hero h1{font-size:42px}.title{font-size:34px}.cta h2{font-size:36px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="보양닷컴 – 인테리어 보양 & 입주 청소 전문. 성남, 광주, 위례 경기 남부 전 지역 신속 출동. 대표번호 010-2187-3006" />
+  <title>보양닷컴 – 인테리어 보양 & 입주 청소 전문</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:    #1B4F8A;   /* 신뢰감 있는 딥 블루 */
+      --primary-lt: #2A6CC4;
+      --accent:     #F0A500;   /* 따뜻한 골드 */
+      --accent-lt:  #FFC23E;
+      --dark:       #1A1A2E;
+      --text:       #333344;
+      --muted:      #6E7A8A;
+      --bg-light:   #F5F8FC;
+      --bg-white:   #FFFFFF;
+      --radius:     12px;
+      --shadow:     0 4px 24px rgba(27,79,138,.12);
+      --transition: .3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text);
+      background: var(--bg-white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ===== UTILITY ===== */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(27,79,138,.1);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: .97rem;
+      max-width: 560px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--primary-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,79,138,.3); }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-accent:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,.3); }
+
+    /* ===== NAV BAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27,79,138,.1);
+      padding: 12px 0;
+      transition: box-shadow var(--transition);
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-logo .dot { color: var(--accent); font-size: .7em; vertical-align: super; }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 9px 20px;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+    .nav-cta:hover { background: var(--accent-lt); transform: translateY(-1px); }
+    .nav-cta i { font-size: .85rem; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0D2B55 0%, #1B4F8A 50%, #1e6fa8 100%);
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(240,165,0,.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-decoration {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(500px, 55vw);
+      height: min(500px, 55vw);
+      border-radius: 50%;
+      background: rgba(240,165,0,.06);
+      border: 2px solid rgba(240,165,0,.12);
+    }
+    .hero-decoration::before {
+      content: '';
+      position: absolute;
+      inset: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(240,165,0,.1);
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .hero-inner {
+      max-width: 620px;
+      padding: 80px 0;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(240,165,0,.18);
+      border: 1px solid rgba(240,165,0,.35);
+      color: var(--accent-lt);
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: .05em;
+    }
+    .hero-badge i { font-size: .75rem; }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent-lt);
+    }
+    .hero-slogan {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,.8);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    .hero-slogan strong { color: #fff; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .hero-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.12);
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .hero-call:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .hero-call i { color: var(--accent-lt); }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-stat-num {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--accent-lt);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.65);
+      margin-top: 4px;
+    }
+    .hero-divider { width: 1px; background: rgba(255,255,255,.2); height: 40px; align-self: center; }
+
+    /* ===== FLOATING CALL BUTTON ===== */
+    .fab-call {
+      position: fixed;
+      bottom: 28px;
+      right: 22px;
+      z-index: 999;
+      background: var(--accent);
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 6px 24px rgba(240,165,0,.5);
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+    .fab-call:hover { transform: scale(1.1); }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(240,165,0,.5); }
+      50%       { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--bg-light);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(27,79,138,.07);
+    }
+    .trust-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 40px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .trust-item i {
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      padding: 100px 0 80px;
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .services-header .section-sub { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--bg-white);
+      border: 1.5px solid rgba(27,79,138,.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(27,79,138,.16); }
+    .service-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .service-card-img-placeholder {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .service-card-body { padding: 28px 26px; }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(27,79,138,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .service-card-body h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .service-card-body p {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.75;
+    }
+    .service-tag {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* Before/After comparison */
+    .before-after {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #0D2B55, #1B4F8A);
+      border-radius: 20px;
+      padding: 50px 40px;
+      color: #fff;
+      text-align: center;
+    }
+    .before-after h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .before-after p {
+      color: rgba(255,255,255,.75);
+      margin-bottom: 36px;
+      font-size: .95rem;
+    }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .ba-box {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .ba-box-inner {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-radius: 12px;
+    }
+    .ba-box-before .ba-box-inner { background: rgba(255,255,255,.07); }
+    .ba-box-after  .ba-box-inner { background: rgba(240,165,0,.15); }
+    .ba-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      letter-spacing: .06em;
+    }
+    .ba-arrow {
+      font-size: 2rem;
+      color: var(--accent-lt);
+    }
+
+    /* ===== PROMISE SECTION ===== */
+    .promise {
+      padding: 90px 0;
+      background: var(--bg-light);
+    }
+    .promise-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .promise-cards {
+      display: grid;
+      gap: 20px;
+    }
+    .promise-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+      transition: var(--transition);
+    }
+    .promise-card:hover { transform: translateX(4px); }
+    .promise-card-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background: rgba(27,79,138,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+    .promise-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .promise-card p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .promise-text .section-sub { margin-bottom: 28px; }
+    .region-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .region-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .83rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 50px;
+    }
+    .region-chip i { font-size: .75rem; }
+
+    /* ===== GALLERY SECTION ===== */
+    .gallery {
+      padding: 90px 0;
+    }
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* Carousel */
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .carousel-slide img,
+    .carousel-slide .slide-placeholder {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .carousel-slide .slide-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 4rem;
+      color: rgba(255,255,255,.8);
+      border-radius: 20px;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+      color: #fff;
+      padding: 30px 28px 24px;
+      border-radius: 0 0 20px 20px;
+    }
+    .slide-caption h4 { font-size: 1.05rem; font-weight: 800; }
+    .slide-caption p  { font-size: .83rem; opacity: .8; margin-top: 3px; }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.9);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      transition: var(--transition);
+      z-index: 10;
+    }
+    .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(27,79,138,.2);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .carousel-dot.active {
+      background: var(--primary);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Thumbnail grid */
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .thumb-item {
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      transition: var(--transition);
+      border: 2.5px solid transparent;
+    }
+    .thumb-item:hover, .thumb-item.active { border-color: var(--primary); }
+    .thumb-item img,
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .thumb-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--accent) 0%, #E8940A 100%);
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .cta-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 900;
+      padding: 16px 36px;
+      border-radius: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+      transition: var(--transition);
+    }
+    .cta-number:hover { transform: scale(1.05); }
+    .cta-number i { color: var(--accent); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.75);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .footer-brand h3 span { color: var(--accent); }
+    .footer-brand .tagline {
+      font-size: .83rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .88rem;
+    }
+    .footer-contact-list i {
+      color: var(--accent);
+      min-width: 16px;
+      margin-top: 3px;
+    }
+    .footer-call-link {
+      color: var(--accent-lt);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .footer-section h4 {
+      font-size: .92rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .87rem;
+    }
+    .footer-list i { color: var(--primary-lt); font-size: .8rem; }
+    .footer-notice {
+      background: rgba(240,165,0,.12);
+      border: 1px solid rgba(240,165,0,.25);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: .84rem;
+      color: rgba(255,255,255,.8);
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+    .footer-notice i { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.4);
+    }
+    .footer-bottom strong { color: rgba(255,255,255,.65); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .promise-inner  { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .footer-grid > .footer-brand { grid-column: 1 / -1; }
+      .ba-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .ba-arrow { transform: rotate(90deg); justify-self: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-inner     { padding: 60px 0; }
+      .hero-stats     { gap: 16px; }
+      .services       { padding: 70px 0 60px; }
+      .promise        { padding: 70px 0; }
+      .gallery        { padding: 70px 0; }
+      .before-after   { padding: 36px 22px; }
+      .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
+      .carousel-slide img,
+      .carousel-slide .slide-placeholder { height: 280px; }
+      .thumb-grid     { grid-template-columns: repeat(3,1fr); gap: 8px; }
+      .ba-box-inner   { height: 130px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="logo">보양<span>닷컴</span></div>
-<a href="tel:01021873789" class="call-btn">📞 010-2187-3789</a>
-</header>
 
-<section class="hero">
-<div>
-<h1>계약 잘 나오는<br><span>프리미엄 보양 홈페이지</span></h1>
-<p>인테리어 보양 · 입주청소 전문<br>무료 견적 상담 가능합니다</p>
-<a href="tel:01021873789">지금 상담하기</a>
-</div>
-</section>
+  <!-- ============================
+       FLOATING CALL BUTTON
+  ============================= -->
+  <a href="tel:01021873006" class="fab-call" aria-label="전화 연결">
+    <i class="fas fa-phone"></i>
+  </a>
 
-<section class="section">
-<h2 class="title">전문 서비스</h2>
-<div class="cards">
-<div class="card">
-<h3>승강기 보양</h3>
-<p>엘리베이터 내부 전문 PP보드 보양 시공</p>
-</div>
-<div class="card">
-<h3>복도 보양</h3>
-<p>공용부 바닥 및 벽면 손상 방지 작업</p>
-</div>
-<div class="card">
-<h3>입주 청소</h3>
-<p>준공 청소 · 마감 청소 전문 시공</p>
-</div>
-</div>
-</section>
+  <!-- ============================
+       NAVBAR
+  ============================= -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
+        <i class="fas fa-shield-alt" style="color:var(--accent);font-size:1.1rem;"></i>
+        보양<span>닷컴</span>
+      </a>
+      <a href="tel:01021873006" class="nav-cta">
+        <i class="fas fa-phone-alt"></i>
+        010-2187-3006
+      </a>
+    </div>
+  </header>
 
-<section class="section pricing">
-<h2 class="title">단가 안내</h2>
-<div class="cards">
-<div class="card"><h3>승강기 보양</h3><div class="price">협의 견적</div></div>
-<div class="card"><h3>복도 보양</h3><div class="price">협의 견적</div></div>
-<div class="card"><h3>입주 청소</h3><div class="price">현장 실측</div></div>
-</div>
-</section>
+  <main>
 
-<section class="section">
-<h2 class="title">보양닷컴 경쟁력</h2>
-<div class="cards">
-<div class="card"><h3>대표 직접 시공</h3><p>하청 없이 직접 책임 시공</p></div>
-<div class="card"><h3>빠른 일정 대응</h3><p>성남 광주 위례 신속 출동</p></div>
-<div class="card"><h3>실제 계약 잘 나오는 상담</h3><p>현장 맞춤 견적 상담</p></div>
-</div>
-</section>
+    <!-- ============================
+         HERO
+    ============================= -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-decoration"></div>
+      <div class="container">
+        <div class="hero-inner reveal">
+          <div class="hero-badge">
+            <i class="fas fa-map-marker-alt"></i>
+            성남 · 광주 · 위례 경기 남부 전 지역
+          </div>
+          <h1>
+            인테리어 보양 &<br />
+            입주 청소 전문<br />
+            <em>보양닷컴</em>
+          </h1>
+          <p class="hero-slogan">
+            <strong>"내 집처럼 꼼꼼하고 깔끔하게"</strong><br />
+            PP 보드 보양부터 입주·이사 청소까지,<br />
+            다년간의 노하우로 완벽하게 마무리합니다.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:01021873006" class="btn btn-accent">
+              <i class="fas fa-phone-alt"></i>
+              무료 견적 전화
+            </a>
+            <a href="#services" class="hero-call">
+              <i class="fas fa-chevron-down"></i>
+              서비스 알아보기
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num">10+</span>
+              <span class="hero-stat-label">년 이상 경력</span>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">500+</span>
+              <span class="hero-stat-label">현장 시공 완료</span>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">직접 시공</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="cta">
-<h2>무료 견적 문의</h2>
-<a href="tel:01021873789">010-2187-3789</a>
-</section>
+    <!-- ============================
+         TRUST BAR
+    ============================= -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 전문가 직접 시공</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 합리적인 견적</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 신속 출동</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 흠집 없는 완벽 보양</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 경기 남부 전 지역</div>
+      </div>
+    </div>
 
-<footer>
-<h3>보양닷컴</h3>
-<p>성남 · 광주 · 위례 인테리어 보양 전문</p>
-<p>© All Rights Reserved</p>
-</footer>
+    <!-- ============================
+         SERVICES SECTION
+    ============================= -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-header reveal">
+          <span class="section-tag">서비스 소개</span>
+          <h2 class="section-title">보양닷컴이 제공하는 두 가지 핵심 서비스</h2>
+          <p class="section-sub">승강기부터 세대 내부까지, 먼지 한 톨도 놓치지 않는 철저한 전문 서비스</p>
+        </div>
 
-<a class="fab" href="tel:01021873789">☎</a>
+        <div class="services-grid">
+          <!-- 인테리어 보양 카드 -->
+          <article class="service-card reveal">
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">
+              🛡️
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3>인테리어 보양</h3>
+              <p>
+                승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.
+              </p>
+              <span class="service-tag">PP 보드 사용</span>
+              <span class="service-tag" style="margin-left:6px;">흠집 ZERO</span>
+            </div>
+          </article>
+
+          <!-- 입주 청소 카드 -->
+          <article class="service-card reveal">
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">
+              🧹
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon" style="background:rgba(34,139,34,.1);color:#228b22;"><i class="fas fa-broom"></i></div>
+              <h3>입주 / 이사 청소</h3>
+              <p>
+                구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.
+              </p>
+              <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;">고품격 클리닝</span>
+              <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;margin-left:6px;">먼지 ZERO</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Before / After -->
+        <div class="before-after reveal">
+          <h3>🎯 작업 전 · 후 차이를 직접 확인하세요</h3>
+          <p>보양닷컴의 꼼꼼한 작업이 만들어내는 확실한 차이</p>
+          <div class="ba-grid">
+            <div class="ba-box ba-box-before">
+              <div class="ba-box-inner">🏗️</div>
+              <span class="ba-label">BEFORE</span>
+            </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-box ba-box-after">
+              <div class="ba-box-inner">✨</div>
+              <span class="ba-label">AFTER</span>
+            </div>
+          </div>
+          <p style="margin-top:20px;font-size:.88rem;color:rgba(255,255,255,.6);">
+            📸 실제 현장 사진은 갤러리 섹션에서 확인하세요
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         PROMISE SECTION
+    ============================= -->
+    <section class="promise" id="promise">
+      <div class="container">
+        <div class="promise-inner">
+          <div class="promise-text reveal">
+            <span class="section-tag">보양닷컴의 약속</span>
+            <h2 class="section-title">왜 보양닷컴을<br />선택해야 할까요?</h2>
+            <p class="section-sub">
+              불필요한 비용 없이, 다년간의 노하우로 빠르고 정확하게.<br />
+              경기 남부 어디서든 신속하게 출동합니다.
+            </p>
+            <div class="region-chips">
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 성남시</span>
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 광주시</span>
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 위례 신도시</span>
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 경기 남부 전 지역</span>
+            </div>
+            <div style="margin-top:32px;">
+              <a href="tel:01021873006" class="btn btn-primary">
+                <i class="fas fa-phone-alt"></i>
+                지금 바로 전화하기
+              </a>
+            </div>
+          </div>
+
+          <div class="promise-cards reveal">
+            <div class="promise-card">
+              <div class="promise-card-icon"><i class="fas fa-won-sign"></i></div>
+              <div>
+                <h4>정직한 가격</h4>
+                <p>불필요한 비용 없이 현장 상황에 맞는 합리적인 견적을 제시해 드립니다. 숨겨진 추가 비용이 없습니다.</p>
+              </div>
+            </div>
+            <div class="promise-card">
+              <div class="promise-card-icon"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>신속한 시공</h4>
+                <p>성남, 광주, 위례 전 지역 신속 출동 가능. 빠른 일정 조율로 공사 일정을 지켜드립니다.</p>
+              </div>
+            </div>
+            <div class="promise-card">
+              <div class="promise-card-icon"><i class="fas fa-user-tie"></i></div>
+              <div>
+                <h4>전문 인력 직접 시공</h4>
+                <p>다년간의 노하우를 가진 전문가가 직접 시공합니다. 하청 없이 대표가 직접 작업에 참여합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         GALLERY SECTION
+    ============================= -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery-header reveal">
+          <span class="section-tag">작업 갤러리</span>
+          <h2 class="section-title">실제 현장 작업 사진</h2>
+          <p class="section-sub" style="margin:0 auto;">성남·광주·위례 현장에서 직접 작업한 보양닷컴의 시공 현장입니다.</p>
+        </div>
+
+        <!-- Main Carousel -->
+        <div class="carousel-wrapper reveal" id="carousel">
+          <div class="carousel-track" id="carouselTrack">
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1B4F8A,#2A6CC4);">
+                🛡️
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">보양 시공 현장 #1</span>
+              </div>
+              <div class="slide-caption">
+                <h4>세대 내부 바닥 보양 작업</h4>
+                <p>PP 보드를 활용한 철저한 바닥 보호 시공</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5c3a,#28835a);">
+                🧹
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">입주 청소 현장 #1</span>
+              </div>
+              <div class="slide-caption">
+                <h4>신규 아파트 입주 청소</h4>
+                <p>구석구석 먼지 제거 및 고품격 클리닝</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#4a2c8a,#6b4cba);">
+                🏗️
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">승강기 보양 작업</span>
+              </div>
+              <div class="slide-caption">
+                <h4>승강기 내부 완벽 보양</h4>
+                <p>이사·공사 중 승강기 스크래치 방지 작업</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#8a4a1a,#c47028);">
+                🏢
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">복도 보양 작업</span>
+              </div>
+              <div class="slide-caption">
+                <h4>공용 복도 보양 시공</h4>
+                <p>세대 외부 복도까지 꼼꼼한 보호 처리</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5879,#207ba8);">
+                ✨
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">이사 청소 완료</span>
+              </div>
+              <div class="slide-caption">
+                <h4>이사 후 완벽 청소 완료</h4>
+                <p>새집으로 쾌적한 새 출발 준비 완성</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#3a5a1a,#5a8a28);">
+                🏠
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">위례 현장 시공</span>
+              </div>
+              <div class="slide-caption">
+                <h4>위례 신도시 보양 시공</h4>
+                <p>위례 지역 대단지 아파트 전문 시공</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#5a1a1a,#8a2828);">
+                🔨
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">성남 현장 시공</span>
+              </div>
+              <div class="slide-caption">
+                <h4>성남시 보양·청소 복합 시공</h4>
+                <p>인테리어 보양부터 입주 청소까지 원스톱</p>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a3a5a,#2856a8);">
+                💯
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">완공 후 점검</span>
+              </div>
+              <div class="slide-caption">
+                <h4>시공 후 꼼꼼한 마무리 점검</h4>
+                <p>모든 작업 후 최종 품질 점검으로 완벽 마무리</p>
+              </div>
+            </div>
+
+          </div><!-- /track -->
+
+          <button class="carousel-btn prev" id="prevBtn" aria-label="이전">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="다음">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div><!-- /carousel-wrapper -->
+
+        <!-- Dots -->
+        <div class="carousel-dots" id="carouselDots"></div>
+
+        <!-- Thumbnail Grid -->
+        <div class="thumb-grid" id="thumbGrid">
+          <!-- generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         CTA BANNER
+    ============================= -->
+    <section class="cta-banner" id="contact">
+      <div class="reveal">
+        <h2>지금 바로 무료 견적을 받아보세요!</h2>
+        <p>
+          작업 중에는 전화를 못 받을 수 있으니,<br />
+          <strong style="color:#fff;">문자를 남겨주시면 바로 연락드리겠습니다.</strong>
+        </p>
+        <a href="tel:01021873006" class="cta-number">
+          <i class="fas fa-phone-alt"></i>
+          010-2187-3006
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <h3><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:8px;"></i>보양<span>닷컴</span></h3>
+          <p class="tagline">"내 집처럼 꼼꼼하고 깔끔하게"</p>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2px;">대표번호</div>
+                <a href="tel:01021873006" class="footer-call-link">010-2187-3006</a>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-comment-alt"></i>
+              <span>문자 주시면 바로 연락드립니다</span>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span>
+            </li>
+          </ul>
+          <div class="footer-notice">
+            <i class="fas fa-info-circle"></i>
+            작업 중에는 전화를 못 받을 수 있으니, 문자를 남겨주시면 바로 연락드리겠습니다.
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+          <h4>제공 서비스</h4>
+          <ul class="footer-list">
+            <li><i class="fas fa-chevron-right"></i> 인테리어 보양 (PP 보드)</li>
+            <li><i class="fas fa-chevron-right"></i> 승강기 보양</li>
+            <li><i class="fas fa-chevron-right"></i> 복도 보양</li>
+            <li><i class="fas fa-chevron-right"></i> 세대 내부 바닥 보양</li>
+            <li><i class="fas fa-chevron-right"></i> 입주 청소</li>
+            <li><i class="fas fa-chevron-right"></i> 이사 청소</li>
+          </ul>
+        </div>
+
+        <!-- Service Area -->
+        <div class="footer-section">
+          <h4>주요 서비스 지역</h4>
+          <ul class="footer-list">
+            <li><i class="fas fa-map-pin"></i> 성남시 (분당구, 수정구, 중원구)</li>
+            <li><i class="fas fa-map-pin"></i> 광주시 전 지역</li>
+            <li><i class="fas fa-map-pin"></i> 위례 신도시</li>
+            <li><i class="fas fa-map-pin"></i> 하남시</li>
+            <li><i class="fas fa-map-pin"></i> 용인시</li>
+            <li><i class="fas fa-map-pin"></i> 경기 남부 전 지역</li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <span>© 2025 보양닷컴. All rights reserved.</span>
+        <span>
+          <strong>상호명:</strong> 보양닷컴 &nbsp;|&nbsp;
+          <strong>대표번호:</strong> <a href="tel:01021873006" style="color:var(--accent-lt);">010-2187-3006</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================
+       JAVASCRIPT
+  ============================= -->
+  <script>
+    /* ----- Navbar scroll effect ----- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ----- Scroll Reveal ----- */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ----- Carousel ----- */
+    const track  = document.getElementById('carouselTrack');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total  = slides.length;
+    let current  = 0;
+    let timer;
+
+    // Build dots
+    const dotsContainer = document.getElementById('carouselDots');
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', `슬라이드 ${i+1}`);
+      btn.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(btn);
+    });
+
+    // Build thumbnails
+    const thumbGrid = document.getElementById('thumbGrid');
+    const thumbEmojis = ['🛡️','🧹','🏗️','🏢','✨','🏠','🔨','💯'];
+    const thumbColors = [
+      'linear-gradient(135deg,#1B4F8A,#2A6CC4)',
+      'linear-gradient(135deg,#1a5c3a,#28835a)',
+      'linear-gradient(135deg,#4a2c8a,#6b4cba)',
+      'linear-gradient(135deg,#8a4a1a,#c47028)',
+      'linear-gradient(135deg,#1a5879,#207ba8)',
+      'linear-gradient(135deg,#3a5a1a,#5a8a28)',
+      'linear-gradient(135deg,#5a1a1a,#8a2828)',
+      'linear-gradient(135deg,#1a3a5a,#2856a8)',
+    ];
+    // Only show first 6 thumbs in grid (2 rows × 3 cols)
+    for (let i = 0; i < Math.min(total, 6); i++) {
+      const div = document.createElement('div');
+      div.className = 'thumb-item' + (i === 0 ? ' active' : '');
+      div.innerHTML = `<div class="thumb-placeholder" style="background:${thumbColors[i]};font-size:2rem;">${thumbEmojis[i]}</div>`;
+      div.addEventListener('click', () => goTo(i));
+      thumbGrid.appendChild(div);
+    }
+
+    function updateUI() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+      document.querySelectorAll('.thumb-item').forEach((t, i) =>
+        t.classList.toggle('active', i === current)
+      );
+    }
+
+    function goTo(index) {
+      current = (index + total) % total;
+      updateUI();
+      resetTimer();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    document.getElementById('nextBtn').addEventListener('click', next);
+    document.getElementById('prevBtn').addEventListener('click', prev);
+
+    // Keyboard support
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft')  prev();
+      if (e.key === 'ArrowRight') next();
+    });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    const carouselEl = document.getElementById('carousel');
+    carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carouselEl.addEventListener('touchend',   e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    });
+
+    // Auto-play
+    function startTimer() { timer = setInterval(next, 4500); }
+    function resetTimer()  { clearInterval(timer); startTimer(); }
+    startTimer();
+
+    /* ----- Smooth anchor scroll ----- */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
