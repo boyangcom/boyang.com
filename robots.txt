@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://보양닷컴.com/sitemap.xml
