@@ -4,50 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="naver-site-verification" content="9bf99c3fd1a9aa3ff2361561365655458421a41a" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="보양닷컴 – 인테리어 보양 & 입주 청소 전문. 성남, 광주, 위례 경기 남부 전 지역 신속 출동. 대표번호 010-2187-3789" />
+  <meta name="description" content="보양닷컴 – 인테리어 보양 & 입주 청소 전문. 성남, 광주, 위례, 하남, 용인 등 경기 남부 전 지역 신속 출동. 대표번호 010-2187-3789" />
+  <meta name="format-detection" content="telephone=no" />
   <title>보양닷컴 – 인테리어 보양 & 입주 청소 전문</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:    #1B4F8A;   /* 신뢰감 있는 딥 블루 */
+      --primary: #1B4F8A;
       --primary-lt: #2A6CC4;
-      --accent:     #F0A500;   /* 따뜻한 골드 */
-      --accent-lt:  #FFC23E;
-      --dark:       #1A1A2E;
-      --text:       #333344;
-      --muted:      #6E7A8A;
-      --bg-light:   #F5F8FC;
-      --bg-white:   #FFFFFF;
-      --radius:     12px;
-      --shadow:     0 4px 24px rgba(27,79,138,.12);
-      --transition: .3s ease;
+      --accent: #F0A500;
+      --accent-lt: #FFC23E;
+      --kakao: #FEE500;
+      --kakao-text: #3B2F00;
+      --green: #228b22;
+      --green-lt: #2ea52e;
+      --dark: #1A1A2E;
+      --text: #333344;
+      --muted: #6E7A8A;
+      --line: rgba(27,79,138,.12);
+      --bg-light: #F5F8FC;
+      --bg-white: #FFFFFF;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(27,79,138,.12);
+      --shadow-lg: 0 12px 40px rgba(27,79,138,.16);
+      --transition: .28s ease;
+      --container: 1140px;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Noto Sans KR', sans-serif;
       color: var(--text);
       background: var(--bg-white);
       line-height: 1.7;
       overflow-x: hidden;
+      word-break: keep-all;
     }
 
     img { display: block; max-width: 100%; }
-    a   { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
 
-    /* ===== UTILITY ===== */
     .container {
       width: 100%;
-      max-width: 1100px;
+      max-width: var(--container);
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -57,528 +63,666 @@
       background: rgba(27,79,138,.1);
       color: var(--primary);
       font-size: .78rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .12em;
       text-transform: uppercase;
       padding: 4px 14px;
-      border-radius: 50px;
+      border-radius: 999px;
       margin-bottom: 12px;
     }
 
     .section-title {
-      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-size: clamp(1.55rem, 4vw, 2.2rem);
       font-weight: 900;
       color: var(--dark);
-      line-height: 1.3;
+      line-height: 1.28;
       margin-bottom: 14px;
     }
 
     .section-sub {
       color: var(--muted);
       font-size: .97rem;
-      max-width: 560px;
+      max-width: 640px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: none;
+      font-size: .98rem;
+      font-weight: 800;
       cursor: pointer;
       transition: var(--transition);
-      border: none;
+      min-height: 50px;
+      white-space: nowrap;
     }
+
+    .btn:hover { transform: translateY(-2px); }
     .btn-primary {
       background: var(--primary);
       color: #fff;
+      box-shadow: 0 8px 24px rgba(27,79,138,.22);
     }
-    .btn-primary:hover { background: var(--primary-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,79,138,.3); }
+    .btn-primary:hover { background: var(--primary-lt); }
+
     .btn-accent {
       background: var(--accent);
       color: #fff;
+      box-shadow: 0 8px 24px rgba(240,165,0,.25);
     }
-    .btn-accent:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,.3); }
+    .btn-accent:hover { background: var(--accent-lt); }
 
-    /* ===== NAV BAR ===== */
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border: 1.5px solid rgba(255,255,255,.28);
+    }
+
+    .btn-kakao {
+      background: var(--kakao);
+      color: var(--kakao-text);
+      box-shadow: 0 8px 24px rgba(254,229,0,.22);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(34,139,34,.2);
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
     .navbar {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.96);
+      z-index: 1100;
+      background: rgba(255,255,255,.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(27,79,138,.1);
-      padding: 12px 0;
+      border-bottom: 1px solid rgba(27,79,138,.08);
       transition: box-shadow var(--transition);
     }
-    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
+
+    .navbar.scrolled { box-shadow: 0 2px 18px rgba(0,0,0,.08); }
+
     .navbar .container {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
+
     .nav-logo {
-      font-size: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
       font-weight: 900;
       color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-actions {
       display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-chip {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-logo .dot { color: var(--accent); font-size: .7em; vertical-align: super; }
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      padding: 9px 20px;
-      border-radius: 50px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 800;
       transition: var(--transition);
+      border: 1px solid var(--line);
+      background: #fff;
     }
-    .nav-cta:hover { background: var(--accent-lt); transform: translateY(-1px); }
-    .nav-cta i { font-size: .85rem; }
 
-    /* ===== HERO ===== */
+    .nav-chip:hover { transform: translateY(-1px); }
+    .nav-chip.call { color: #fff; background: var(--primary); border-color: var(--primary); }
+    .nav-chip.sms { color: #fff; background: var(--green); border-color: var(--green); }
+    .nav-chip.kakao { color: var(--kakao-text); background: var(--kakao); border-color: rgba(0,0,0,.05); }
+
     .hero {
       position: relative;
-      min-height: 92vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0D2B55 0%, #1B4F8A 50%, #1e6fa8 100%);
+      background:
+        radial-gradient(circle at 15% 30%, rgba(255,194,62,.16), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.08), transparent 26%),
+        linear-gradient(135deg, #0D2B55 0%, #1B4F8A 52%, #1D6B9D 100%);
     }
-    .hero-bg-pattern {
+
+    .hero::after {
+      content: "";
       position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(240,165,0,.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
-      pointer-events: none;
-    }
-    .hero-decoration {
-      position: absolute;
-      right: -60px;
+      right: -90px;
       top: 50%;
       transform: translateY(-50%);
-      width: min(500px, 55vw);
-      height: min(500px, 55vw);
+      width: min(540px, 55vw);
+      height: min(540px, 55vw);
       border-radius: 50%;
-      background: rgba(240,165,0,.06);
-      border: 2px solid rgba(240,165,0,.12);
+      border: 2px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
     }
-    .hero-decoration::before {
-      content: '';
-      position: absolute;
-      inset: 30px;
-      border-radius: 50%;
-      border: 2px solid rgba(240,165,0,.1);
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
-    .hero .container { position: relative; z-index: 2; }
+
     .hero-inner {
-      max-width: 620px;
-      padding: 80px 0;
+      max-width: 690px;
+      padding: 84px 0 78px;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding: 7px 16px;
+      border-radius: 999px;
       background: rgba(240,165,0,.18);
       border: 1px solid rgba(240,165,0,.35);
       color: var(--accent-lt);
       font-size: .8rem;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 24px;
-      letter-spacing: .05em;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
-    .hero-badge i { font-size: .75rem; }
+
     .hero h1 {
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      font-weight: 900;
       color: #fff;
-      line-height: 1.2;
-      margin-bottom: 14px;
+      font-size: clamp(2rem, 6vw, 3.55rem);
+      font-weight: 900;
+      line-height: 1.16;
+      margin-bottom: 18px;
     }
+
     .hero h1 em {
       font-style: normal;
       color: var(--accent-lt);
     }
+
     .hero-slogan {
-      font-size: clamp(.95rem, 2.5vw, 1.15rem);
-      color: rgba(255,255,255,.8);
-      margin-bottom: 36px;
+      color: rgba(255,255,255,.85);
+      font-size: clamp(.98rem, 2.5vw, 1.14rem);
+      margin-bottom: 30px;
       line-height: 1.8;
+      max-width: 560px;
     }
+
     .hero-slogan strong { color: #fff; }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
+      gap: 12px;
+      margin-bottom: 30px;
     }
-    .hero-call {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+
+    .hero-actions .btn-outline {
       background: rgba(255,255,255,.12);
-      border: 1.5px solid rgba(255,255,255,.25);
       color: #fff;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: var(--transition);
+      border: 1.5px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(6px);
     }
-    .hero-call:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
-    .hero-call i { color: var(--accent-lt); }
+
+    .hero-actions .btn-outline:hover {
+      background: rgba(255,255,255,.18);
+    }
+
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 18px 26px;
+      align-items: center;
     }
+
     .hero-stat {
       display: flex;
       flex-direction: column;
     }
+
     .hero-stat-num {
-      font-size: 1.7rem;
+      font-size: 1.55rem;
       font-weight: 900;
-      color: var(--accent-lt);
       line-height: 1;
+      color: var(--accent-lt);
     }
+
     .hero-stat-label {
-      font-size: .78rem;
-      color: rgba(255,255,255,.65);
-      margin-top: 4px;
-    }
-    .hero-divider { width: 1px; background: rgba(255,255,255,.2); height: 40px; align-self: center; }
-
-    /* ===== FLOATING CALL BUTTON ===== */
-    .fab-call {
-      position: fixed;
-      bottom: 28px;
-      right: 22px;
-      z-index: 999;
-      background: var(--accent);
-      color: #fff;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 6px 24px rgba(240,165,0,.5);
-      transition: var(--transition);
-      animation: pulse 2s infinite;
-    }
-    .fab-call:hover { transform: scale(1.1); }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 6px 24px rgba(240,165,0,.5); }
-      50%       { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
+      color: rgba(255,255,255,.68);
+      font-size: .8rem;
+      margin-top: 5px;
     }
 
-    /* ===== TRUST BAR ===== */
+    .hero-divider {
+      width: 1px;
+      height: 38px;
+      background: rgba(255,255,255,.18);
+    }
+
     .trust-bar {
       background: var(--bg-light);
-      padding: 20px 0;
       border-bottom: 1px solid rgba(27,79,138,.07);
+      padding: 18px 0;
     }
+
     .trust-bar .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px 40px;
+      gap: 14px 28px;
     }
+
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-size: .9rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--primary);
     }
-    .trust-item i {
-      color: var(--accent);
-      font-size: 1rem;
+
+    .trust-item i { color: var(--accent); }
+
+    .services {
+      padding: 96px 0 80px;
     }
 
-    /* ===== SERVICES SECTION ===== */
-    .services {
-      padding: 100px 0 80px;
-    }
     .services-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 52px;
     }
+
     .services-header .section-sub { margin: 0 auto; }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
     }
+
     .service-card {
-      background: var(--bg-white);
-      border: 1.5px solid rgba(27,79,138,.1);
-      border-radius: var(--radius);
       overflow: hidden;
       transition: var(--transition);
-      box-shadow: var(--shadow);
     }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(27,79,138,.16); }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: #e8eef7;
+    }
+
     .service-card-img {
       width: 100%;
-      height: 220px;
+      height: 100%;
       object-fit: cover;
     }
-    .service-card-img-placeholder {
-      width: 100%;
-      height: 220px;
-      display: flex;
+
+    .service-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 4rem;
+      gap: 6px;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
     }
-    .service-card-body { padding: 28px 26px; }
+
+    .service-card-body {
+      padding: 26px 24px 24px;
+    }
+
     .service-icon {
       width: 52px;
       height: 52px;
       border-radius: 14px;
       background: rgba(27,79,138,.08);
+      color: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      color: var(--primary);
-      margin-bottom: 16px;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
     }
-    .service-card-body h3 {
+
+    .service-card h3 {
       font-size: 1.15rem;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--dark);
       margin-bottom: 10px;
     }
-    .service-card-body p {
+
+    .service-card p {
       color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.75;
-    }
-    .service-tag {
-      display: inline-block;
-      margin-top: 16px;
-      background: rgba(27,79,138,.08);
-      color: var(--primary);
-      font-size: .75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 50px;
+      font-size: .94rem;
+      line-height: 1.8;
     }
 
-    /* Before/After comparison */
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
     .before-after {
-      margin-top: 60px;
+      margin-top: 54px;
       background: linear-gradient(135deg, #0D2B55, #1B4F8A);
-      border-radius: 20px;
-      padding: 50px 40px;
+      border-radius: var(--radius-lg);
+      padding: 42px 34px;
       color: #fff;
+      overflow: hidden;
+    }
+
+    .before-after h3 {
+      font-size: 1.38rem;
+      font-weight: 900;
+      margin-bottom: 10px;
       text-align: center;
     }
-    .before-after h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 10px;
+
+    .before-after > p {
+      text-align: center;
+      color: rgba(255,255,255,.76);
+      margin-bottom: 28px;
+      font-size: .94rem;
     }
-    .before-after p {
-      color: rgba(255,255,255,.75);
-      margin-bottom: 36px;
-      font-size: .95rem;
-    }
+
     .ba-grid {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
-    }
-    .ba-box {
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-    .ba-box-inner {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      border-radius: 12px;
-    }
-    .ba-box-before .ba-box-inner { background: rgba(255,255,255,.07); }
-    .ba-box-after  .ba-box-inner { background: rgba(240,165,0,.15); }
-    .ba-label {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(0,0,0,.55);
-      color: #fff;
-      font-size: .72rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 50px;
-      letter-spacing: .06em;
-    }
-    .ba-arrow {
-      font-size: 2rem;
-      color: var(--accent-lt);
     }
 
-    /* ===== PROMISE SECTION ===== */
+    .ba-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .ba-box img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+
+    .ba-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 18px 18px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,.68));
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    .ba-arrow {
+      color: var(--accent-lt);
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
     .promise {
-      padding: 90px 0;
+      padding: 92px 0;
       background: var(--bg-light);
     }
+
     .promise-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 56px;
       align-items: center;
     }
+
+    .region-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .region-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .83rem;
+      font-weight: 800;
+    }
+
     .promise-cards {
       display: grid;
-      gap: 20px;
-    }
-    .promise-card {
-      background: var(--bg-white);
-      border-radius: var(--radius);
-      padding: 26px 24px;
-      display: flex;
       gap: 18px;
-      align-items: flex-start;
-      box-shadow: var(--shadow);
+    }
+
+    .promise-card {
+      display: flex;
+      gap: 16px;
+      padding: 24px 22px;
       border-left: 4px solid var(--primary);
       transition: var(--transition);
     }
-    .promise-card:hover { transform: translateX(4px); }
+
+    .promise-card:hover {
+      transform: translateX(4px);
+    }
+
     .promise-card-icon {
       width: 48px;
       height: 48px;
       min-width: 48px;
       border-radius: 12px;
       background: rgba(27,79,138,.1);
+      color: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      color: var(--primary);
+      font-size: 1.25rem;
     }
+
     .promise-card h4 {
       font-size: 1rem;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--dark);
       margin-bottom: 6px;
     }
+
     .promise-card p {
       font-size: .88rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.72;
     }
-    .promise-text .section-sub { margin-bottom: 28px; }
-    .region-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .region-chip {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(27,79,138,.08);
-      color: var(--primary);
-      font-size: .83rem;
-      font-weight: 700;
-      padding: 7px 16px;
-      border-radius: 50px;
-    }
-    .region-chip i { font-size: .75rem; }
 
-    /* ===== GALLERY SECTION ===== */
     .gallery {
-      padding: 90px 0;
+      padding: 92px 0;
     }
+
     .gallery-header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 42px;
     }
 
-    /* Carousel */
+    .gallery-header .section-sub { margin: 0 auto; }
+
+    .gallery-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
     .carousel-wrapper {
       position: relative;
       overflow: hidden;
       border-radius: 20px;
+      background: #eef3fa;
+      box-shadow: var(--shadow);
     }
+
     .carousel-track {
       display: flex;
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
+      transition: transform .45s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
     }
+
     .carousel-slide {
       min-width: 100%;
       position: relative;
+      overflow: hidden;
     }
-    .carousel-slide img,
-    .carousel-slide .slide-placeholder {
+
+    .carousel-slide img {
       width: 100%;
-      height: 460px;
+      height: 520px;
       object-fit: cover;
-      border-radius: 20px;
     }
-    .carousel-slide .slide-placeholder {
-      display: flex;
-      flex-direction: column;
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.68) 100%);
+    }
+
+    .slide-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 16px;
-      font-size: 4rem;
-      color: rgba(255,255,255,.8);
-      border-radius: 20px;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.5);
+      color: #fff;
+      font-size: .74rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+      z-index: 2;
     }
+
     .slide-caption {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.65));
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 34px 28px 24px;
       color: #fff;
-      padding: 30px 28px 24px;
-      border-radius: 0 0 20px 20px;
+      z-index: 2;
     }
-    .slide-caption h4 { font-size: 1.05rem; font-weight: 800; }
-    .slide-caption p  { font-size: .83rem; opacity: .8; margin-top: 3px; }
+
+    .slide-caption h4 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .slide-caption p {
+      font-size: .88rem;
+      opacity: .86;
+    }
 
     .carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 5;
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      background: rgba(255,255,255,.9);
       border: none;
-      cursor: pointer;
-      font-size: 1rem;
+      background: rgba(255,255,255,.92);
       color: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
       transition: var(--transition);
-      z-index: 10;
     }
-    .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+
+    .carousel-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+      background: #fff;
+    }
+
     .carousel-btn.prev { left: 14px; }
     .carousel-btn.next { right: 14px; }
 
@@ -586,421 +730,775 @@
       display: flex;
       justify-content: center;
       gap: 8px;
-      margin-top: 20px;
+      margin-top: 2px;
     }
+
     .carousel-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      border: none;
+      border-radius: 999px;
       background: rgba(27,79,138,.2);
       cursor: pointer;
       transition: var(--transition);
-      border: none;
-    }
-    .carousel-dot.active {
-      background: var(--primary);
-      width: 24px;
-      border-radius: 4px;
     }
 
-    /* Thumbnail grid */
-    .thumb-grid {
+    .carousel-dot.active {
+      width: 24px;
+      background: var(--primary);
+    }
+
+    .thumb-scroll {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 12px;
-      margin-top: 16px;
     }
+
     .thumb-item {
-      border-radius: 10px;
+      position: relative;
       overflow: hidden;
-      cursor: pointer;
-      aspect-ratio: 4/3;
-      transition: var(--transition);
       border: 2.5px solid transparent;
+      border-radius: 12px;
+      background: #eef3fa;
+      cursor: pointer;
+      transition: var(--transition);
+      aspect-ratio: 4 / 3;
+      padding: 0;
     }
-    .thumb-item:hover, .thumb-item.active { border-color: var(--primary); }
-    .thumb-item img,
-    .thumb-placeholder {
+
+    .thumb-item:hover,
+    .thumb-item.active {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .thumb-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .thumb-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
+
+    .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.24));
     }
 
-    /* ===== CTA BANNER ===== */
+    .contact-panel {
+      padding: 92px 0;
+      background: var(--bg-light);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 26px;
+      padding: 30px;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line);
+    }
+
+    .contact-copy .section-sub {
+      margin-bottom: 22px;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .contact-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .92rem;
+      color: var(--text);
+    }
+
+    .contact-point i {
+      color: var(--accent);
+      margin-top: 5px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .quick-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .quick-form input,
+    .quick-form select,
+    .quick-form textarea {
+      width: 100%;
+      border: 1px solid rgba(27,79,138,.14);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--text);
+      padding: 14px 15px;
+      transition: var(--transition);
+    }
+
+    .quick-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .quick-form input:focus,
+    .quick-form select:focus,
+    .quick-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(27,79,138,.08);
+    }
+
+    .form-note {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .form-submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .inquiry-preview {
+      display: none;
+      margin-top: 12px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #f8fbff;
+      border: 1px dashed rgba(27,79,138,.22);
+    }
+
+    .inquiry-preview.active { display: block; }
+
+    .inquiry-preview h4 {
+      font-size: .95rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .inquiry-preview pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: .88rem;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid rgba(27,79,138,.08);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .cta-banner {
-      background: linear-gradient(135deg, var(--accent) 0%, #E8940A 100%);
       padding: 70px 20px;
       text-align: center;
+      background: linear-gradient(135deg, var(--accent) 0%, #E8940A 100%);
     }
+
     .cta-banner h2 {
       font-size: clamp(1.5rem, 4vw, 2.1rem);
       font-weight: 900;
       color: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
+
     .cta-banner p {
-      color: rgba(255,255,255,.88);
-      font-size: 1rem;
-      margin-bottom: 32px;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 28px;
       line-height: 1.8;
     }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .cta-number {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 999px;
       background: #fff;
       color: var(--primary);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 900;
-      padding: 16px 36px;
-      border-radius: 50px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,.14);
       transition: var(--transition);
     }
-    .cta-number:hover { transform: scale(1.05); }
-    .cta-number i { color: var(--accent); }
 
-    /* ===== FOOTER ===== */
+    .cta-number:hover { transform: scale(1.03); }
+
     footer {
       background: var(--dark);
       color: rgba(255,255,255,.75);
-      padding: 60px 0 30px;
+      padding: 56px 0 28px;
     }
+
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 42px;
+      margin-bottom: 40px;
     }
+
     .footer-brand h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
       color: #fff;
-      margin-bottom: 6px;
+      font-size: 1.38rem;
+      font-weight: 900;
+      margin-bottom: 8px;
     }
+
     .footer-brand h3 span { color: var(--accent); }
-    .footer-brand .tagline {
-      font-size: .83rem;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 20px;
+
+    .footer-tagline {
+      font-size: .84rem;
+      color: rgba(255,255,255,.52);
+      margin-bottom: 18px;
       font-style: italic;
     }
-    .footer-contact-list {
+
+    .footer-contact-list,
+    .footer-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      display: grid;
+      gap: 10px;
     }
-    .footer-contact-list li {
+
+    .footer-contact-list li,
+    .footer-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       font-size: .88rem;
+      line-height: 1.7;
     }
-    .footer-contact-list i {
+
+    .footer-contact-list i,
+    .footer-list i {
       color: var(--accent);
       min-width: 16px;
-      margin-top: 3px;
+      margin-top: 4px;
     }
-    .footer-call-link {
-      color: var(--accent-lt);
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
+
     .footer-section h4 {
-      font-size: .92rem;
-      font-weight: 800;
       color: #fff;
-      margin-bottom: 18px;
+      font-size: .95rem;
+      font-weight: 800;
+      margin-bottom: 16px;
       padding-bottom: 10px;
       border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    .footer-list {
-      list-style: none;
+
+    .footer-notice {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-radius: 12px;
+      background: rgba(240,165,0,.1);
+      border: 1px solid rgba(240,165,0,.22);
+      font-size: .84rem;
+      color: rgba(255,255,255,.82);
+      line-height: 1.7;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 22px;
+      color: rgba(255,255,255,.42);
+      font-size: .82rem;
+    }
+
+    .footer-bottom strong {
+      color: rgba(255,255,255,.68);
+    }
+
+    .fab-call {
+      position: fixed;
+      right: 22px;
+      bottom: 24px;
+      z-index: 1200;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.35rem;
+      box-shadow: 0 8px 28px rgba(240,165,0,.45);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 8px 28px rgba(240,165,0,.45); }
+      50% { box-shadow: 0 8px 42px rgba(240,165,0,.65); }
+    }
+
+    .mobile-cta-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      z-index: 1300;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 -8px 30px rgba(0,0,0,.08);
+    }
+
+    .mobile-cta-btn {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-    .footer-list li {
-      display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: .87rem;
-    }
-    .footer-list i { color: var(--primary-lt); font-size: .8rem; }
-    .footer-notice {
-      background: rgba(240,165,0,.12);
-      border: 1px solid rgba(240,165,0,.25);
-      border-radius: 10px;
-      padding: 16px 18px;
-      font-size: .84rem;
-      color: rgba(255,255,255,.8);
-      line-height: 1.7;
-      margin-top: 20px;
-    }
-    .footer-notice i { color: var(--accent); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: .82rem;
-      color: rgba(255,255,255,.4);
-    }
-    .footer-bottom strong { color: rgba(255,255,255,.65); }
-
-    /* ===== SCROLL REVEAL ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
+      justify-content: center;
+      gap: 4px;
+      min-height: 64px;
+      padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+      font-size: .76rem;
+      font-weight: 900;
     }
 
-    /* ===== RESPONSIVE ===== */
+    .mobile-cta-btn i { font-size: 1rem; }
+    .mobile-cta-btn.call { color: #fff; background: var(--primary); }
+    .mobile-cta-btn.sms { color: #fff; background: var(--green); }
+    .mobile-cta-btn.kakao { color: var(--kakao-text); background: var(--kakao); }
+
+    @media (max-width: 1024px) {
+      .services-grid,
+      .promise-inner,
+      .contact-card,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid > .footer-brand {
+        grid-column: auto;
+      }
+    }
+
     @media (max-width: 900px) {
-      .promise-inner  { grid-template-columns: 1fr; gap: 36px; }
-      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 36px; }
-      .footer-grid > .footer-brand { grid-column: 1 / -1; }
+      .nav-actions .nav-chip.kakao { display: none; }
+      .hero::after { display: none; }
+
+      .thumb-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+      }
+
+      .thumb-item {
+        min-width: 110px;
+        flex: 0 0 auto;
+      }
+
       .ba-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
       }
-      .ba-arrow { transform: rotate(90deg); justify-self: center; }
+
+      .ba-arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 72px; }
+      .mobile-cta-bar { display: grid; }
+      .fab-call { display: none; }
+
+      .navbar .container {
+        min-height: 66px;
+      }
+
+      .nav-actions .nav-chip.sms { display: none; }
+
+      .hero-inner {
+        padding: 60px 0 54px;
+      }
+
+      .hero-slogan {
+        margin-bottom: 24px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-stats {
+        gap: 14px 18px;
+      }
+
+      .hero-divider { display: none; }
+
+      .services,
+      .promise,
+      .gallery,
+      .contact-panel {
+        padding: 72px 0;
+      }
+
+      .service-card-body,
+      .contact-card {
+        padding: 22px;
+      }
+
+      .carousel-slide img {
+        height: 320px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta-number,
+      .cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 600px) {
-      .hero-inner     { padding: 60px 0; }
-      .hero-stats     { gap: 16px; }
-      .services       { padding: 70px 0 60px; }
-      .promise        { padding: 70px 0; }
-      .gallery        { padding: 70px 0; }
-      .before-after   { padding: 36px 22px; }
-      .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
-      .carousel-slide img,
-      .carousel-slide .slide-placeholder { height: 280px; }
-      .thumb-grid     { grid-template-columns: repeat(3,1fr); gap: 8px; }
-      .ba-box-inner   { height: 130px; }
+      .container { padding: 0 16px; }
+
+      .nav-logo {
+        font-size: 1.12rem;
+      }
+
+      .nav-chip {
+        padding: 9px 12px;
+        font-size: .8rem;
+      }
+
+      .hero-badge {
+        font-size: .74rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.85rem, 8vw, 2.45rem);
+      }
+
+      .section-title {
+        font-size: 1.55rem;
+      }
+
+      .service-card-img-wrap {
+        aspect-ratio: 4 / 3;
+      }
+
+      .carousel-slide img {
+        height: 250px;
+      }
+
+      .slide-caption {
+        padding: 22px 18px 18px;
+      }
+
+      .before-after {
+        padding: 28px 18px;
+      }
+
+      .ba-box img {
+        height: 210px;
+      }
+
+      .contact-actions .btn,
+      .form-submit-row .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============================
-       FLOATING CALL BUTTON
-  ============================= -->
-  <a href="tel:01021873789" class="fab-call" aria-label="전화 연결">
-    <i class="fas fa-phone"></i>
+  <a href="tel:01021873789" class="fab-call" aria-label="보양닷컴 전화 연결">
+    <i class="fas fa-phone-alt"></i>
   </a>
 
-  <!-- ============================
-       NAVBAR
-  ============================= -->
+  <div class="mobile-cta-bar" aria-label="모바일 빠른 문의">
+    <a href="tel:01021873789" class="mobile-cta-btn call" aria-label="전화 상담">
+      <i class="fas fa-phone-alt"></i>
+      <span>전화</span>
+    </a>
+    <a href="sms:01021873789?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20%EB%B3%B4%EC%96%91%EB%8B%B7%EC%BB%B4%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." class="mobile-cta-btn sms" aria-label="문자 상담">
+      <i class="fas fa-comment-dots"></i>
+      <span>문자</span>
+    </a>
+    <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="mobile-cta-btn kakao" aria-label="카카오톡 상담">
+      <i class="fas fa-comment"></i>
+      <span>카카오톡</span>
+    </a>
+  </div>
+
   <header class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
-        <i class="fas fa-shield-alt" style="color:var(--accent);font-size:1.1rem;"></i>
+      <a href="#hero" class="nav-logo" aria-label="보양닷컴 홈">
+        <i class="fas fa-shield-alt" style="color:var(--accent)"></i>
         보양<span>닷컴</span>
       </a>
-      <a href="tel:01021873789" class="nav-cta">
-        <i class="fas fa-phone-alt"></i>
-        010-2187-3789
-      </a>
+
+      <div class="nav-actions">
+        <a href="sms:01021873789?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20%EB%B3%B4%EC%96%91%EB%8B%B7%EC%BB%B4%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." class="nav-chip sms" aria-label="문자 상담">
+          <i class="fas fa-comment-dots"></i> 문자상담
+        </a>
+        <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="nav-chip kakao" aria-label="카카오톡 상담">
+          <i class="fas fa-comment"></i> 카카오톡
+        </a>
+        <a href="tel:01021873789" class="nav-chip call" aria-label="전화 상담">
+          <i class="fas fa-phone-alt"></i> 010-2187-3789
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
-
-    <!-- ============================
-         HERO
-    ============================= -->
     <section class="hero" id="hero">
-      <div class="hero-bg-pattern"></div>
-      <div class="hero-decoration"></div>
       <div class="container">
         <div class="hero-inner reveal">
           <div class="hero-badge">
             <i class="fas fa-map-marker-alt"></i>
-            성남 · 광주 · 위례 경기 남부 전 지역
+            성남 · 광주 · 위례 · 하남 · 용인 · 경기 남부
           </div>
+
           <h1>
             인테리어 보양 &<br />
             입주 청소 전문<br />
             <em>보양닷컴</em>
           </h1>
+
           <p class="hero-slogan">
-            <strong>"내 집처럼 꼼꼼하고 깔끔하게"</strong><br />
-            PP 보드 보양부터 입주·이사 청소까지,<br />
-            다년간의 노하우로 완벽하게 마무리합니다.
+            <strong>실제 현장 경험을 바탕으로</strong> 승강기·복도·세대 내부 보양부터
+            입주·이사 청소까지 빠르고 꼼꼼하게 진행합니다.
           </p>
+
           <div class="hero-actions">
-            <a href="tel:01021873789" class="btn btn-accent">
+            <a href="tel:01021873789" class="btn btn-accent" aria-label="무료 견적 전화">
               <i class="fas fa-phone-alt"></i>
               무료 견적 전화
             </a>
-            <a href="#services" class="hero-call">
+            <a href="sms:01021873789?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20%EB%B3%B4%EC%96%91%EB%8B%B7%EC%BB%B4%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." class="btn btn-green" aria-label="문자 상담">
+              <i class="fas fa-comment-dots"></i>
+              문자 상담
+            </a>
+            <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="btn btn-kakao" aria-label="카카오톡 상담">
+              <i class="fas fa-comment"></i>
+              카카오톡 상담
+            </a>
+            <a href="#services" class="btn btn-outline" aria-label="서비스 자세히 보기">
               <i class="fas fa-chevron-down"></i>
               서비스 알아보기
             </a>
           </div>
+
           <div class="hero-stats">
             <div class="hero-stat">
-              <span class="hero-stat-num">10+</span>
-              <span class="hero-stat-label">년 이상 경력</span>
+              <span class="hero-stat-num">다년간</span>
+              <span class="hero-stat-label">현장 경험 기반</span>
             </div>
             <div class="hero-divider"></div>
             <div class="hero-stat">
-              <span class="hero-stat-num">500+</span>
-              <span class="hero-stat-label">현장 시공 완료</span>
+              <span class="hero-stat-num">직접</span>
+              <span class="hero-stat-label">상담 · 작업 진행</span>
             </div>
             <div class="hero-divider"></div>
             <div class="hero-stat">
-              <span class="hero-stat-num">100%</span>
-              <span class="hero-stat-label">직접 시공</span>
+              <span class="hero-stat-num">신속</span>
+              <span class="hero-stat-label">경기 남부 출동 가능</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================
-         TRUST BAR
-    ============================= -->
-    <div class="trust-bar">
+    <section class="trust-bar" aria-label="신뢰 포인트">
       <div class="container">
-        <div class="trust-item"><i class="fas fa-check-circle"></i> 전문가 직접 시공</div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i> 합리적인 견적</div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i> 신속 출동</div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i> 흠집 없는 완벽 보양</div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i> 경기 남부 전 지역</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 실제 현장사진 기반 소개</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 합리적인 견적 안내</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 성남·광주·위례 신속 대응</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 보양 · 청소 원스톱 가능</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 전화·문자·카카오톡 상담</div>
       </div>
-    </div>
+    </section>
 
-    <!-- ============================
-         SERVICES SECTION
-    ============================= -->
     <section class="services" id="services">
       <div class="container">
         <div class="services-header reveal">
           <span class="section-tag">서비스 소개</span>
-          <h2 class="section-title">보양닷컴이 제공하는 두 가지 핵심 서비스</h2>
-          <p class="section-sub">승강기부터 세대 내부까지, 먼지 한 톨도 놓치지 않는 철저한 전문 서비스</p>
+          <h2 class="section-title">현장 상황에 맞춰 보양과 청소를 정확하게 진행합니다</h2>
+          <p class="section-sub">
+            승강기, 복도, 세대 내부 바닥 보양부터 입주·이사 청소까지 실제 현장 경험을 바탕으로 꼼꼼하게 작업합니다.
+          </p>
         </div>
 
         <div class="services-grid">
-          <!-- 인테리어 보양 카드 -->
-          <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">
-              🛡️
+          <article class="service-card card reveal">
+            <div class="service-card-img-wrap">
+              <img
+                src="./images/services/service-protection-main.webp"
+                alt="세대 내부 바닥과 공용부 인테리어 보양 작업 현장"
+                class="service-card-img"
+                loading="lazy"
+              />
+              <span class="service-badge"><i class="fas fa-shield-alt"></i> 인테리어 보양</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="service-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
               <h3>인테리어 보양</h3>
               <p>
-                승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.
+                승강기, 복도, 세대 내부 바닥 등 공사와 이사 과정에서 손상되기 쉬운 구간을
+                PP 보드와 보양 자재로 보호하여 스크래치와 오염을 최소화합니다.
               </p>
-              <span class="service-tag">PP 보드 사용</span>
-              <span class="service-tag" style="margin-left:6px;">흠집 ZERO</span>
+              <div class="service-tags">
+                <span class="service-tag"><i class="fas fa-check"></i> PP 보드 사용</span>
+                <span class="service-tag"><i class="fas fa-check"></i> 공용부 보양 가능</span>
+                <span class="service-tag"><i class="fas fa-check"></i> 세대 내부 보양</span>
+              </div>
             </div>
           </article>
 
-          <!-- 입주 청소 카드 -->
-          <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">
-              🧹
+          <article class="service-card card reveal">
+            <div class="service-card-img-wrap">
+              <img
+                src="./images/services/service-cleaning-main.webp"
+                alt="신규 아파트 입주 청소 현장"
+                class="service-card-img"
+                loading="lazy"
+              />
+              <span class="service-badge"><i class="fas fa-broom"></i> 입주 · 이사 청소</span>
             </div>
             <div class="service-card-body">
-              <div class="service-icon" style="background:rgba(34,139,34,.1);color:#228b22;"><i class="fas fa-broom"></i></div>
+              <div class="service-icon" style="background:rgba(34,139,34,.1);color:#228b22;">
+                <i class="fas fa-broom"></i>
+              </div>
               <h3>입주 / 이사 청소</h3>
               <p>
-                구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.
+                바닥, 창틀, 주방, 욕실, 수납장 내부 등 생활 전 반드시 확인해야 하는 공간을
+                정리하여 보다 쾌적한 입주 환경을 준비해드립니다.
               </p>
-              <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;">고품격 클리닝</span>
-              <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;margin-left:6px;">먼지 ZERO</span>
+              <div class="service-tags">
+                <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;"><i class="fas fa-check"></i> 입주 청소</span>
+                <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;"><i class="fas fa-check"></i> 이사 청소</span>
+                <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;"><i class="fas fa-check"></i> 꼼꼼한 마감</span>
+              </div>
             </div>
           </article>
         </div>
 
-        <!-- Before / After -->
         <div class="before-after reveal">
-          <h3>🎯 작업 전 · 후 차이를 직접 확인하세요</h3>
-          <p>보양닷컴의 꼼꼼한 작업이 만들어내는 확실한 차이</p>
+          <h3>작업 전 · 후 비교도 한눈에 확인하세요</h3>
+          <p>실제 현장사진을 넣을 수 있도록 구조를 바꾼 상태입니다. 아래 이미지만 교체하면 바로 운영 가능합니다.</p>
+
           <div class="ba-grid">
-            <div class="ba-box ba-box-before">
-              <div class="ba-box-inner">🏗️</div>
+            <div class="ba-box">
+              <img src="./images/before-after/before-01.webp" alt="보양 작업 전 현장 사진" loading="lazy" />
               <span class="ba-label">BEFORE</span>
+              <div class="ba-caption">작업 전 현장 상태</div>
             </div>
-            <div class="ba-arrow">→</div>
-            <div class="ba-box ba-box-after">
-              <div class="ba-box-inner">✨</div>
+
+            <div class="ba-arrow" aria-hidden="true">→</div>
+
+            <div class="ba-box">
+              <img src="./images/before-after/after-01.webp" alt="보양 작업 후 현장 사진" loading="lazy" />
               <span class="ba-label">AFTER</span>
+              <div class="ba-caption">작업 후 깔끔하게 마무리</div>
             </div>
           </div>
-          <p style="margin-top:20px;font-size:.88rem;color:rgba(255,255,255,.6);">
-            📸 실제 현장 사진은 갤러리 섹션에서 확인하세요
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- ============================
-         PROMISE SECTION
-    ============================= -->
     <section class="promise" id="promise">
       <div class="container">
         <div class="promise-inner">
-          <div class="promise-text reveal">
+          <div class="reveal">
             <span class="section-tag">보양닷컴의 약속</span>
-            <h2 class="section-title">왜 보양닷컴을<br />선택해야 할까요?</h2>
+            <h2 class="section-title">현장에 맞는 작업을<br />빠르고 깔끔하게 진행합니다</h2>
             <p class="section-sub">
-              불필요한 비용 없이, 다년간의 노하우로 빠르고 정확하게.<br />
-              경기 남부 어디서든 신속하게 출동합니다.
+              과한 문구보다 실제 현장 결과와 응대 속도가 중요하다고 생각합니다.
+              전화가 어려우시면 문자나 카카오톡으로 남겨주셔도 빠르게 확인 후 연락드립니다.
             </p>
+
             <div class="region-chips">
               <span class="region-chip"><i class="fas fa-map-pin"></i> 성남시</span>
               <span class="region-chip"><i class="fas fa-map-pin"></i> 광주시</span>
               <span class="region-chip"><i class="fas fa-map-pin"></i> 위례 신도시</span>
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 하남시</span>
+              <span class="region-chip"><i class="fas fa-map-pin"></i> 용인시</span>
               <span class="region-chip"><i class="fas fa-map-pin"></i> 경기 남부 전 지역</span>
             </div>
-            <div style="margin-top:32px;">
-              <a href="tel:01021873789" class="btn btn-primary">
-                <i class="fas fa-phone-alt"></i>
-                지금 바로 전화하기
+
+            <div style="margin-top:28px;">
+              <a href="#contact-form" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+                빠른 문의 남기기
               </a>
             </div>
           </div>
 
           <div class="promise-cards reveal">
-            <div class="promise-card">
+            <div class="promise-card card">
               <div class="promise-card-icon"><i class="fas fa-won-sign"></i></div>
               <div>
-                <h4>정직한 가격</h4>
-                <p>불필요한 비용 없이 현장 상황에 맞는 합리적인 견적을 제시해 드립니다. 숨겨진 추가 비용이 없습니다.</p>
+                <h4>정직한 견적 안내</h4>
+                <p>현장 조건, 작업 범위, 일정에 맞춰 필요한 내용 위주로 설명드리고 불필요한 항목은 최소화합니다.</p>
               </div>
             </div>
-            <div class="promise-card">
+
+            <div class="promise-card card">
               <div class="promise-card-icon"><i class="fas fa-bolt"></i></div>
               <div>
-                <h4>신속한 시공</h4>
-                <p>성남, 광주, 위례 전 지역 신속 출동 가능. 빠른 일정 조율로 공사 일정을 지켜드립니다.</p>
+                <h4>빠른 일정 조율</h4>
+                <p>성남·광주·위례·하남·용인 등 경기 남부 지역 중심으로 일정 확인 후 신속하게 안내해드립니다.</p>
               </div>
             </div>
-            <div class="promise-card">
+
+            <div class="promise-card card">
               <div class="promise-card-icon"><i class="fas fa-user-tie"></i></div>
               <div>
-                <h4>전문 인력 직접 시공</h4>
-                <p>다년간의 노하우를 가진 전문가가 직접 시공합니다. 하청 없이 대표가 직접 작업에 참여합니다.</p>
+                <h4>실제 현장 중심 운영</h4>
+                <p>말보다 결과가 중요하므로 실제 작업 사진과 현장 설명을 중심으로 신뢰감 있게 보여주는 구조로 구성했습니다.</p>
               </div>
             </div>
           </div>
@@ -1008,187 +1506,202 @@
       </div>
     </section>
 
-    <!-- ============================
-         GALLERY SECTION
-    ============================= -->
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery-header reveal">
           <span class="section-tag">작업 갤러리</span>
-          <h2 class="section-title">실제 현장 작업 사진</h2>
-          <p class="section-sub" style="margin:0 auto;">성남·광주·위례 현장에서 직접 작업한 보양닷컴의 시공 현장입니다.</p>
+          <h2 class="section-title">실제 현장사진을 쉽게 교체할 수 있는 갤러리 구조</h2>
+          <p class="section-sub">
+            아래 갤러리는 이미지 경로와 설명만 배열에서 바꾸면 메인 슬라이드, 캡션, 썸네일까지 한 번에 반영됩니다.
+          </p>
         </div>
 
-        <!-- Main Carousel -->
-        <div class="carousel-wrapper reveal" id="carousel">
-          <div class="carousel-track" id="carouselTrack">
+        <div class="gallery-wrap reveal">
+          <div class="carousel-wrapper" id="carousel" aria-label="현장 작업 갤러리">
+            <div class="carousel-track" id="carouselTrack" aria-live="polite"></div>
 
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1B4F8A,#2A6CC4);">
-                🛡️
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">보양 시공 현장 #1</span>
-              </div>
-              <div class="slide-caption">
-                <h4>세대 내부 바닥 보양 작업</h4>
-                <p>PP 보드를 활용한 철저한 바닥 보호 시공</p>
-              </div>
-            </div>
+            <button class="carousel-btn prev" id="prevBtn" aria-label="이전 슬라이드">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="다음 슬라이드">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
 
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5c3a,#28835a);">
-                🧹
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">입주 청소 현장 #1</span>
-              </div>
-              <div class="slide-caption">
-                <h4>신규 아파트 입주 청소</h4>
-                <p>구석구석 먼지 제거 및 고품격 클리닝</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#4a2c8a,#6b4cba);">
-                🏗️
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">승강기 보양 작업</span>
-              </div>
-              <div class="slide-caption">
-                <h4>승강기 내부 완벽 보양</h4>
-                <p>이사·공사 중 승강기 스크래치 방지 작업</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#8a4a1a,#c47028);">
-                🏢
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">복도 보양 작업</span>
-              </div>
-              <div class="slide-caption">
-                <h4>공용 복도 보양 시공</h4>
-                <p>세대 외부 복도까지 꼼꼼한 보호 처리</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5879,#207ba8);">
-                ✨
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">이사 청소 완료</span>
-              </div>
-              <div class="slide-caption">
-                <h4>이사 후 완벽 청소 완료</h4>
-                <p>새집으로 쾌적한 새 출발 준비 완성</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#3a5a1a,#5a8a28);">
-                🏠
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">위례 현장 시공</span>
-              </div>
-              <div class="slide-caption">
-                <h4>위례 신도시 보양 시공</h4>
-                <p>위례 지역 대단지 아파트 전문 시공</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#5a1a1a,#8a2828);">
-                🔨
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">성남 현장 시공</span>
-              </div>
-              <div class="slide-caption">
-                <h4>성남시 보양·청소 복합 시공</h4>
-                <p>인테리어 보양부터 입주 청소까지 원스톱</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a3a5a,#2856a8);">
-                💯
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">완공 후 점검</span>
-              </div>
-              <div class="slide-caption">
-                <h4>시공 후 꼼꼼한 마무리 점검</h4>
-                <p>모든 작업 후 최종 품질 점검으로 완벽 마무리</p>
-              </div>
-            </div>
-
-          </div><!-- /track -->
-
-          <button class="carousel-btn prev" id="prevBtn" aria-label="이전">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="carousel-btn next" id="nextBtn" aria-label="다음">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div><!-- /carousel-wrapper -->
-
-        <!-- Dots -->
-        <div class="carousel-dots" id="carouselDots"></div>
-
-        <!-- Thumbnail Grid -->
-        <div class="thumb-grid" id="thumbGrid">
-          <!-- generated by JS -->
+          <div class="carousel-dots" id="carouselDots" aria-label="슬라이드 이동"></div>
+          <div class="thumb-scroll" id="thumbGrid" aria-label="썸네일 목록"></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================
-         CTA BANNER
-    ============================= -->
+    <section class="contact-panel" id="contact-form">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-copy">
+            <span class="section-tag">빠른 상담</span>
+            <h2 class="section-title">전화가 어려우시면<br />문자나 카카오톡으로 문의하세요</h2>
+            <p class="section-sub">
+              지역, 평형, 작업 종류, 희망 일정 정도만 남겨주셔도 빠르게 상담이 가능합니다.
+            </p>
+
+            <div class="contact-points">
+              <div class="contact-point">
+                <i class="fas fa-check-circle"></i>
+                <span>작업 중에는 전화를 못 받을 수 있어 문자나 카카오톡 문의도 적극 권장드립니다.</span>
+              </div>
+              <div class="contact-point">
+                <i class="fas fa-check-circle"></i>
+                <span>문의폼 작성 후 바로 문자 앱으로 연결되도록 구성해두었습니다.</span>
+              </div>
+              <div class="contact-point">
+                <i class="fas fa-check-circle"></i>
+                <span>실제 서버 연동이 필요하면 추후 Formspree / 이메일 / 자체 서버로 바꾸기 쉽습니다.</span>
+              </div>
+            </div>
+
+            <div class="contact-actions">
+              <a href="tel:01021873789" class="btn btn-primary" aria-label="전화 상담">
+                <i class="fas fa-phone-alt"></i> 전화 상담
+              </a>
+              <a href="sms:01021873789?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20%EB%B3%B4%EC%96%91%EB%8B%B7%EC%BB%B4%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." class="btn btn-green" aria-label="문자 상담">
+                <i class="fas fa-comment-dots"></i> 문자 상담
+              </a>
+              <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="btn btn-kakao" aria-label="카카오톡 상담">
+                <i class="fas fa-comment"></i> 카카오톡 상담
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <form class="quick-form" id="quickInquiryForm">
+              <div class="form-row">
+                <input type="text" name="name" placeholder="성함" required />
+                <input type="tel" name="phone" placeholder="연락처" required />
+              </div>
+
+              <div class="form-row">
+                <select name="service" required>
+                  <option value="">서비스 선택</option>
+                  <option>인테리어 보양</option>
+                  <option>입주 청소</option>
+                  <option>이사 청소</option>
+                  <option>보양 + 청소</option>
+                  <option>기타 문의</option>
+                </select>
+                <input type="text" name="area" placeholder="지역 (예: 위례, 분당, 광주)" />
+              </div>
+
+              <div class="form-row">
+                <input type="text" name="size" placeholder="평형 / 현장 규모" />
+                <input type="text" name="schedule" placeholder="희망 일정" />
+              </div>
+
+              <textarea name="message" placeholder="현장 상황, 보양 범위, 청소 범위, 문의사항 등을 적어주세요"></textarea>
+
+              <p class="form-note">
+                문의 내용을 작성하면 아래에 문자 전송용 내용이 자동 생성됩니다.
+                모바일에서는 바로 문자 앱 연결, PC에서는 내용 복사 후 문자/카카오톡 상담에 활용할 수 있습니다.
+              </p>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-paper-plane"></i>
+                  문의 내용 생성하기
+                </button>
+                <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="btn btn-kakao">
+                  <i class="fas fa-comment"></i>
+                  카카오톡 바로가기
+                </a>
+              </div>
+            </form>
+
+            <div class="inquiry-preview" id="inquiryPreview">
+              <h4>생성된 문의 내용</h4>
+              <pre id="previewText"></pre>
+              <div class="preview-actions">
+                <a href="#" id="sendSmsLink" class="btn btn-green">
+                  <i class="fas fa-comment-dots"></i>
+                  문자 앱 열기
+                </a>
+                <button type="button" id="copyInquiryBtn" class="btn btn-primary">
+                  <i class="fas fa-copy"></i>
+                  문의 내용 복사
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-banner" id="contact">
-      <div class="reveal">
-        <h2>지금 바로 무료 견적을 받아보세요!</h2>
-        <p>
-          작업 중에는 전화를 못 받을 수 있으니,<br />
-          <strong style="color:#fff;">문자를 남겨주시면 바로 연락드리겠습니다.</strong>
-        </p>
-        <a href="tel:01021873789" class="cta-number">
-          <i class="fas fa-phone-alt"></i>
-          010-2187-3789
-        </a>
+      <div class="container">
+        <div class="reveal">
+          <h2>지금 바로 무료 견적을 받아보세요</h2>
+          <p>
+            작업 중에는 전화를 못 받을 수 있으니<br />
+            <strong style="color:#fff;">문자나 카카오톡으로 남겨주시면 더 빠르게 확인 가능합니다.</strong>
+          </p>
+
+          <div class="cta-actions">
+            <a href="tel:01021873789" class="cta-number" aria-label="전화 상담">
+              <i class="fas fa-phone-alt" style="color:var(--accent)"></i>
+              010-2187-3789
+            </a>
+            <a href="sms:01021873789?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%20%EB%B3%B4%EC%96%91%EB%8B%B7%EC%BB%B4%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." class="btn btn-green">
+              <i class="fas fa-comment-dots"></i>
+              문자 상담
+            </a>
+            <a href="https://pf.kakao.com/_채널아이디/chat" target="_blank" rel="noopener" class="btn btn-kakao">
+              <i class="fas fa-comment"></i>
+              카카오톡 상담
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ============================
-       FOOTER
-  ============================= -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
-
-        <!-- Brand -->
         <div class="footer-brand">
           <h3><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:8px;"></i>보양<span>닷컴</span></h3>
-          <p class="tagline">"내 집처럼 꼼꼼하고 깔끔하게"</p>
+          <p class="footer-tagline">"내 집처럼 꼼꼼하고 깔끔하게"</p>
+
           <ul class="footer-contact-list">
             <li>
               <i class="fas fa-phone-alt"></i>
               <div>
                 <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2px;">대표번호</div>
-                <a href="tel:01021873789" class="footer-call-link">010-2187-3789</a>
+                <a href="tel:01021873789" style="color:var(--accent-lt);font-weight:800;">010-2187-3789</a>
               </div>
             </li>
             <li>
-              <i class="fas fa-comment-alt"></i>
-              <span>문자 주시면 바로 연락드립니다</span>
+              <i class="fas fa-comment-dots"></i>
+              <span>문자 문의 가능 · 작업 중일 경우 문자 확인 후 연락</span>
+            </li>
+            <li>
+              <i class="fas fa-comment"></i>
+              <span>카카오톡 상담 가능</span>
             </li>
             <li>
               <i class="fas fa-map-marker-alt"></i>
-              <span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span>
+              <span>성남시 · 광주시 · 위례 신도시 · 하남시 · 용인시 등 경기 남부 전 지역</span>
             </li>
           </ul>
+
           <div class="footer-notice">
             <i class="fas fa-info-circle"></i>
-            작업 중에는 전화를 못 받을 수 있으니, 문자를 남겨주시면 바로 연락드리겠습니다.
+            실제 운영 시에는 상단/갤러리/서비스 이미지 경로를 실제 현장사진으로 교체하고,
+            카카오톡 채널 링크를 실제 상담 채널로 바꿔주세요.
           </div>
         </div>
 
-        <!-- Services -->
         <div class="footer-section">
           <h4>제공 서비스</h4>
           <ul class="footer-list">
-            <li><i class="fas fa-chevron-right"></i> 인테리어 보양 (PP 보드)</li>
+            <li><i class="fas fa-chevron-right"></i> 인테리어 보양</li>
             <li><i class="fas fa-chevron-right"></i> 승강기 보양</li>
             <li><i class="fas fa-chevron-right"></i> 복도 보양</li>
             <li><i class="fas fa-chevron-right"></i> 세대 내부 바닥 보양</li>
@@ -1197,7 +1710,6 @@
           </ul>
         </div>
 
-        <!-- Service Area -->
         <div class="footer-section">
           <h4>주요 서비스 지역</h4>
           <ul class="footer-list">
@@ -1209,131 +1721,273 @@
             <li><i class="fas fa-map-pin"></i> 경기 남부 전 지역</li>
           </ul>
         </div>
-
-      </div><!-- /footer-grid -->
+      </div>
 
       <div class="footer-bottom">
         <span>© 2025 보양닷컴. All rights reserved.</span>
         <span>
           <strong>상호명:</strong> 보양닷컴 &nbsp;|&nbsp;
-          <strong>대표번호:</strong> <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a>
+          <strong>대표번호:</strong>
+          <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a>
         </span>
       </div>
     </div>
   </footer>
 
-  <!-- ============================
-       JAVASCRIPT
-  ============================= -->
   <script>
-    /* ----- Navbar scroll effect ----- */
+    const PHONE_NUMBER = '01021873789';
+    const KAKAO_CHAT_URL = 'https://pf.kakao.com/_채널아이디/chat';
+
+    const galleryData = [
+      {
+        src: './images/gallery/seongnam-floor-01.webp',
+        thumb: './images/gallery/thumbs/seongnam-floor-01.webp',
+        alt: '성남 아파트 세대 내부 바닥 보양 작업',
+        title: '세대 내부 바닥 보양 작업',
+        desc: 'PP 보드를 활용한 철저한 바닥 보호 시공',
+        area: '성남'
+      },
+      {
+        src: './images/gallery/wirye-cleaning-01.webp',
+        thumb: './images/gallery/thumbs/wirye-cleaning-01.webp',
+        alt: '위례 신도시 신규 아파트 입주 청소 현장',
+        title: '신규 아파트 입주 청소',
+        desc: '구석구석 먼지 제거 및 마감 클리닝',
+        area: '위례'
+      },
+      {
+        src: './images/gallery/gwangju-elevator-01.webp',
+        thumb: './images/gallery/thumbs/gwangju-elevator-01.webp',
+        alt: '광주 승강기 내부 보양 시공 현장',
+        title: '승강기 내부 완벽 보양',
+        desc: '이사·공사 중 스크래치 방지 작업',
+        area: '광주'
+      },
+      {
+        src: './images/gallery/hanam-corridor-01.webp',
+        thumb: './images/gallery/thumbs/hanam-corridor-01.webp',
+        alt: '하남 아파트 공용 복도 보양 작업',
+        title: '공용 복도 보양 시공',
+        desc: '공용부 오염과 손상을 줄이는 복도 보호 작업',
+        area: '하남'
+      },
+      {
+        src: './images/gallery/yongin-moving-cleaning-01.webp',
+        thumb: './images/gallery/thumbs/yongin-moving-cleaning-01.webp',
+        alt: '용인 이사 청소 완료 현장',
+        title: '이사 청소 완료',
+        desc: '입주 전 생활 공간을 깔끔하게 마무리',
+        area: '용인'
+      },
+      {
+        src: './images/gallery/seongnam-combined-01.webp',
+        thumb: './images/gallery/thumbs/seongnam-combined-01.webp',
+        alt: '성남 보양 및 청소 복합 작업 현장',
+        title: '보양 + 청소 원스톱 진행',
+        desc: '인테리어 보양부터 입주 청소까지 한 번에 진행',
+        area: '성남'
+      }
+    ];
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
     });
 
-    /* ----- Scroll Reveal ----- */
     const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12 });
+
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ----- Carousel ----- */
-    const track  = document.getElementById('carouselTrack');
-    const slides = track.querySelectorAll('.carousel-slide');
-    const total  = slides.length;
-    let current  = 0;
-    let timer;
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
 
-    // Build dots
-    const dotsContainer = document.getElementById('carouselDots');
-    slides.forEach((_, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      btn.setAttribute('aria-label', `슬라이드 ${i+1}`);
-      btn.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(btn);
-    });
-
-    // Build thumbnails
-    const thumbGrid = document.getElementById('thumbGrid');
-    const thumbEmojis = ['🛡️','🧹','🏗️','🏢','✨','🏠','🔨','💯'];
-    const thumbColors = [
-      'linear-gradient(135deg,#1B4F8A,#2A6CC4)',
-      'linear-gradient(135deg,#1a5c3a,#28835a)',
-      'linear-gradient(135deg,#4a2c8a,#6b4cba)',
-      'linear-gradient(135deg,#8a4a1a,#c47028)',
-      'linear-gradient(135deg,#1a5879,#207ba8)',
-      'linear-gradient(135deg,#3a5a1a,#5a8a28)',
-      'linear-gradient(135deg,#5a1a1a,#8a2828)',
-      'linear-gradient(135deg,#1a3a5a,#2856a8)',
-    ];
-    // Only show first 6 thumbs in grid (2 rows × 3 cols)
-    for (let i = 0; i < Math.min(total, 6); i++) {
-      const div = document.createElement('div');
-      div.className = 'thumb-item' + (i === 0 ? ' active' : '');
-      div.innerHTML = `<div class="thumb-placeholder" style="background:${thumbColors[i]};font-size:2rem;">${thumbEmojis[i]}</div>`;
-      div.addEventListener('click', () => goTo(i));
-      thumbGrid.appendChild(div);
-    }
-
-    function updateUI() {
-      track.style.transform = `translateX(-${current * 100}%)`;
-      document.querySelectorAll('.carousel-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current)
-      );
-      document.querySelectorAll('.thumb-item').forEach((t, i) =>
-        t.classList.toggle('active', i === current)
-      );
-    }
-
-    function goTo(index) {
-      current = (index + total) % total;
-      updateUI();
-      resetTimer();
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    document.getElementById('nextBtn').addEventListener('click', next);
-    document.getElementById('prevBtn').addEventListener('click', prev);
-
-    // Keyboard support
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  prev();
-      if (e.key === 'ArrowRight') next();
-    });
-
-    // Touch / swipe support
-    let touchStartX = 0;
-    const carouselEl = document.getElementById('carousel');
-    carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    carouselEl.addEventListener('touchend',   e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-    });
-
-    // Auto-play
-    function startTimer() { timer = setInterval(next, 4500); }
-    function resetTimer()  { clearInterval(timer); startTimer(); }
-    startTimer();
-
-    /* ----- Smooth anchor scroll ----- */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
-  </script>
-</body>
-</html>
+
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselDots = document.getElementById('carouselDots');
+    const thumbGrid = document.getElementById('thumbGrid');
+    const carouselEl = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentSlide = 0;
+    let autoplayTimer = null;
+    let totalSlides = 0;
+    let touchStartX = 0;
+
+    function buildGallery() {
+      if (!carouselTrack || !carouselDots || !thumbGrid || !galleryData.length) return;
+
+      carouselTrack.innerHTML = '';
+      carouselDots.innerHTML = '';
+      thumbGrid.innerHTML = '';
+
+      galleryData.forEach((item, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        slide.innerHTML = `
+          <img src="${item.src}" alt="${item.alt}" loading="${index === 0 ? 'eager' : 'lazy'}" />
+          <div class="slide-overlay"></div>
+          <span class="slide-badge"><i class="fas fa-map-marker-alt"></i> ${item.area}</span>
+          <div class="slide-caption">
+            <h4>${item.title}</h4>
+            <p>${item.desc}</p>
+          </div>
+        `;
+        carouselTrack.appendChild(slide);
+
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `슬라이드 ${index + 1}`);
+        dot.addEventListener('click', () => goToSlide(index));
+        carouselDots.appendChild(dot);
+
+        const thumb = document.createElement('button');
+        thumb.className = 'thumb-item' + (index === 0 ? ' active' : '');
+        thumb.type = 'button';
+        thumb.setAttribute('aria-label', `${item.title} 썸네일`);
+        thumb.innerHTML = `
+          <img src="${item.thumb || item.src}" alt="${item.alt}" loading="lazy" />
+          <span class="thumb-overlay"></span>
+        `;
+        thumb.addEventListener('click', () => goToSlide(index));
+        thumbGrid.appendChild(thumb);
+      });
+
+      totalSlides = galleryData.length;
+      updateGalleryUI();
+      if (totalSlides <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      }
+    }
+
+    function updateGalleryUI() {
+      carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+
+      document.querySelectorAll('.thumb-item').forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function goToSlide(index) {
+      if (!totalSlides) return;
+      currentSlide = (index + totalSlides) % totalSlides;
+      updateGalleryUI();
+      resetAutoplay();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlideFn() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startAutoplay() {
+      if (totalSlides <= 1) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(nextSlide, 4500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', prevSlideFn);
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    if (carouselEl) {
+      carouselEl.addEventListener('mouseenter', stopAutoplay);
+      carouselEl.addEventListener('mouseleave', startAutoplay);
+
+      carouselEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+
+      carouselEl.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          diff > 0 ? nextSlide() : prevSlideFn();
+        }
+      }, { passive: true });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlideFn();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    buildGallery();
+    startAutoplay();
+
+    const form = document.getElementById('quickInquiryForm');
+    const inquiryPreview = document.getElementById('inquiryPreview');
+    const previewText = document.getElementById('previewText');
+    const sendSmsLink = document.getElementById('sendSmsLink');
+    const copyInquiryBtn = document.getElementById('copyInquiryBtn');
+
+    function buildInquiryText(formData) {
+      const name = formData.get('name')?.trim() || '';
+      const phone = formData.get('phone')?.trim() || '';
+      const service = formData.get('service')?.trim() || '';
+      const area = formData.get('area')?.trim() || '';
+      const size = formData.get('size')?.trim() || '';
+      const schedule = formData.get('schedule')?.trim() || '';
+      const message = formData.get('message')?.trim() || '';
+
+      return [
+        '안녕하세요. 보양닷컴 견적 문의드립니다.',
+        '',
+        `성함: ${name || '-'}`,
+        `연락처: ${phone || '-'}`,
+        `서비스: ${service || '-'}`,
+        `지역: ${area || '-'}`,
+        `평형/규모: ${size || '-'}`,
+        `희망 일정: ${schedule || '-'}`,
+        `문의 내용: ${message || '-'}`
+      ].join('\n');
+    }
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
