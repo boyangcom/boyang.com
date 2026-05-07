@@ -7,16 +7,19 @@
   <meta name="description" content="보양닷컴 – 인테리어 보양 & 입주 청소 전문. 성남, 광주, 위례 경기 남부 전 지역 신속 출동. 대표번호 010-2187-3789" />
   <title>보양닷컴 – 인테리어 보양 & 입주 청소 전문</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
   <style>
+    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:    #1B4F8A;
+      --primary:    #1B4F8A;   /* 신뢰감 있는 딥 블루 */
       --primary-lt: #2A6CC4;
-      --accent:     #F0A500;
+      --accent:     #F0A500;   /* 따뜻한 골드 */
       --accent-lt:  #FFC23E;
       --dark:       #1A1A2E;
       --text:       #333344;
@@ -29,6 +32,7 @@
     }
 
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Noto Sans KR', sans-serif;
       color: var(--text);
@@ -36,9 +40,11 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
+
     img { display: block; max-width: 100%; }
     a   { text-decoration: none; color: inherit; }
 
+    /* ===== UTILITY ===== */
     .container {
       width: 100%;
       max-width: 1100px;
@@ -58,6 +64,7 @@
       border-radius: 50px;
       margin-bottom: 12px;
     }
+
     .section-title {
       font-size: clamp(1.5rem, 4vw, 2.1rem);
       font-weight: 900;
@@ -65,11 +72,13 @@
       line-height: 1.3;
       margin-bottom: 14px;
     }
+
     .section-sub {
       color: var(--muted);
       font-size: .97rem;
       max-width: 560px;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -82,15 +91,22 @@
       transition: var(--transition);
       border: none;
     }
-    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
     .btn-primary:hover { background: var(--primary-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,79,138,.3); }
-    .btn-accent  { background: var(--accent); color: #fff; }
-    .btn-accent:hover  { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,.3); }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-accent:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,.3); }
 
-    /* ===== NAVBAR ===== */
+    /* ===== NAV BAR ===== */
     .navbar {
       position: sticky;
-      top: 0; z-index: 1000;
+      top: 0;
+      z-index: 1000;
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(27,79,138,.1);
@@ -98,81 +114,165 @@
       transition: box-shadow var(--transition);
     }
     .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
-    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     .nav-logo {
-      font-size: 1.35rem; font-weight: 900; color: var(--primary);
-      display: flex; align-items: center; gap: 8px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .nav-logo span { color: var(--accent); }
+    .nav-logo .dot { color: var(--accent); font-size: .7em; vertical-align: super; }
     .nav-cta {
-      display: flex; align-items: center; gap: 6px;
-      background: var(--accent); color: #fff;
-      font-weight: 700; font-size: .9rem;
-      padding: 9px 20px; border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 9px 20px;
+      border-radius: 50px;
       transition: var(--transition);
     }
     .nav-cta:hover { background: var(--accent-lt); transform: translateY(-1px); }
+    .nav-cta i { font-size: .85rem; }
 
     /* ===== HERO ===== */
     .hero {
       position: relative;
       min-height: 92vh;
-      display: flex; align-items: center; overflow: hidden;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
       background: linear-gradient(135deg, #0D2B55 0%, #1B4F8A 50%, #1e6fa8 100%);
     }
     .hero-bg-pattern {
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(240,165,0,.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(240,165,0,.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
       pointer-events: none;
     }
     .hero-decoration {
-      position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
-      width: min(500px,55vw); height: min(500px,55vw);
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(500px, 55vw);
+      height: min(500px, 55vw);
       border-radius: 50%;
-      background: rgba(240,165,0,.06); border: 2px solid rgba(240,165,0,.12);
+      background: rgba(240,165,0,.06);
+      border: 2px solid rgba(240,165,0,.12);
     }
     .hero-decoration::before {
-      content: ''; position: absolute; inset: 30px;
-      border-radius: 50%; border: 2px solid rgba(240,165,0,.1);
+      content: '';
+      position: absolute;
+      inset: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(240,165,0,.1);
     }
     .hero .container { position: relative; z-index: 2; }
-    .hero-inner { max-width: 620px; padding: 80px 0; }
+    .hero-inner {
+      max-width: 620px;
+      padding: 80px 0;
+    }
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(240,165,0,.18); border: 1px solid rgba(240,165,0,.35);
-      color: var(--accent-lt); font-size: .8rem; font-weight: 700;
-      padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(240,165,0,.18);
+      border: 1px solid rgba(240,165,0,.35);
+      color: var(--accent-lt);
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: .05em;
     }
+    .hero-badge i { font-size: .75rem; }
     .hero h1 {
-      font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 900; color: #fff;
-      line-height: 1.2; margin-bottom: 14px;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
     }
-    .hero h1 em { font-style: normal; color: var(--accent-lt); }
-    .hero-slogan { font-size: clamp(.95rem,2.5vw,1.15rem); color: rgba(255,255,255,.8); margin-bottom: 36px; line-height: 1.8; }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent-lt);
+    }
+    .hero-slogan {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,.8);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
     .hero-slogan strong { color: #fff; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
     .hero-call {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.25);
-      color: #fff; padding: 14px 24px; border-radius: 50px;
-      font-weight: 700; font-size: 1rem; transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.12);
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: var(--transition);
     }
     .hero-call:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
     .hero-call i { color: var(--accent-lt); }
-    .hero-stats { display: flex; flex-wrap: wrap; gap: 24px; }
-    .hero-stat { display: flex; flex-direction: column; }
-    .hero-stat-num { font-size: 1.7rem; font-weight: 900; color: var(--accent-lt); line-height: 1; }
-    .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 4px; }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-stat-num {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--accent-lt);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.65);
+      margin-top: 4px;
+    }
     .hero-divider { width: 1px; background: rgba(255,255,255,.2); height: 40px; align-self: center; }
 
-    /* ===== FAB ===== */
+    /* ===== FLOATING CALL BUTTON ===== */
     .fab-call {
-      position: fixed; bottom: 28px; right: 22px; z-index: 999;
-      background: var(--accent); color: #fff;
-      width: 58px; height: 58px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      position: fixed;
+      bottom: 28px;
+      right: 22px;
+      z-index: 999;
+      background: var(--accent);
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.4rem;
       box-shadow: 0 6px 24px rgba(240,165,0,.5);
       transition: var(--transition);
@@ -180,270 +280,533 @@
     }
     .fab-call:hover { transform: scale(1.1); }
     @keyframes pulse {
-      0%,100% { box-shadow: 0 6px 24px rgba(240,165,0,.5); }
-      50%      { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
+      0%, 100% { box-shadow: 0 6px 24px rgba(240,165,0,.5); }
+      50%       { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
     }
 
     /* ===== TRUST BAR ===== */
     .trust-bar {
-      background: var(--bg-light); padding: 20px 0;
+      background: var(--bg-light);
+      padding: 20px 0;
       border-bottom: 1px solid rgba(27,79,138,.07);
     }
-    .trust-bar .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
-    .trust-item { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: var(--primary); }
-    .trust-item i { color: var(--accent); font-size: 1rem; }
+    .trust-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 40px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .trust-item i {
+      color: var(--accent);
+      font-size: 1rem;
+    }
 
-    /* ===== SERVICES ===== */
-    .services { padding: 100px 0 80px; }
-    .services-header { text-align: center; margin-bottom: 60px; }
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      padding: 100px 0 80px;
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
     .services-header .section-sub { margin: 0 auto; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 28px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
     .service-card {
-      background: var(--bg-white); border: 1.5px solid rgba(27,79,138,.1);
-      border-radius: var(--radius); overflow: hidden;
-      transition: var(--transition); box-shadow: var(--shadow);
+      background: var(--bg-white);
+      border: 1.5px solid rgba(27,79,138,.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
     }
     .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(27,79,138,.16); }
-    .service-card-img { width: 100%; height: 220px; object-fit: cover; }
+    .service-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
     .service-card-img-placeholder {
-      width: 100%; height: 220px;
-      display: flex; align-items: center; justify-content: center; font-size: 4rem;
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
     }
     .service-card-body { padding: 28px 26px; }
     .service-icon {
-      width: 52px; height: 52px; border-radius: 14px;
-      background: rgba(27,79,138,.08); display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(27,79,138,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 16px;
     }
-    .service-card-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
-    .service-card-body p { color: var(--muted); font-size: .93rem; line-height: 1.75; }
+    .service-card-body h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .service-card-body p {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.75;
+    }
     .service-tag {
-      display: inline-block; margin-top: 16px;
-      background: rgba(27,79,138,.08); color: var(--primary);
-      font-size: .75rem; font-weight: 700; padding: 4px 12px; border-radius: 50px;
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
     }
 
-    /* ===== BEFORE / AFTER ===== */
+    /* Before/After comparison */
     .before-after {
       margin-top: 60px;
       background: linear-gradient(135deg, #0D2B55, #1B4F8A);
-      border-radius: 20px; padding: 50px 40px; color: #fff; text-align: center;
+      border-radius: 20px;
+      padding: 50px 40px;
+      color: #fff;
+      text-align: center;
     }
-    .before-after h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
-    .before-after > p { color: rgba(255,255,255,.75); margin-bottom: 36px; font-size: .95rem; }
+    .before-after h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .before-after p {
+      color: rgba(255,255,255,.75);
+      margin-bottom: 36px;
+      font-size: .95rem;
+    }
     .ba-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr) auto repeat(4, 1fr);
-      gap: 8px;
-      align-items: center;
-    }
-    /* 모바일에선 단순 2열 */
-    .ba-photos {
-      display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
     }
-    .ba-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .ba-img-wrap { position: relative; border-radius: 10px; overflow: hidden; }
-    .ba-img-wrap img {
-      width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
-      border-radius: 10px;
+    .ba-box {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
     }
+    .ba-box-inner {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-radius: 12px;
+    }
+    .ba-box-before .ba-box-inner { background: rgba(255,255,255,.07); }
+    .ba-box-after  .ba-box-inner { background: rgba(240,165,0,.15); }
     .ba-label {
-      position: absolute; top: 8px; left: 8px;
-      background: rgba(0,0,0,.6); color: #fff;
-      font-size: .7rem; font-weight: 700; padding: 2px 10px; border-radius: 50px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
       letter-spacing: .06em;
     }
-    .ba-arrow-col {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 6px; padding: 0 4px;
+    .ba-arrow {
+      font-size: 2rem;
+      color: var(--accent-lt);
     }
-    .ba-arrow-icon { font-size: 2rem; color: var(--accent-lt); }
-    .ba-arrow-text { font-size: .75rem; color: rgba(255,255,255,.6); white-space: nowrap; }
 
-    /* ===== PROMISE ===== */
-    .promise { padding: 90px 0; background: var(--bg-light); }
-    .promise-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .promise-cards { display: grid; gap: 20px; }
+    /* ===== PROMISE SECTION ===== */
+    .promise {
+      padding: 90px 0;
+      background: var(--bg-light);
+    }
+    .promise-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .promise-cards {
+      display: grid;
+      gap: 20px;
+    }
     .promise-card {
-      background: var(--bg-white); border-radius: var(--radius); padding: 26px 24px;
-      display: flex; gap: 18px; align-items: flex-start;
-      box-shadow: var(--shadow); border-left: 4px solid var(--primary);
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
       transition: var(--transition);
     }
     .promise-card:hover { transform: translateX(4px); }
     .promise-card-icon {
-      width: 48px; height: 48px; min-width: 48px; border-radius: 12px;
-      background: rgba(27,79,138,.1); display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; color: var(--primary);
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background: rgba(27,79,138,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary);
     }
-    .promise-card h4 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
-    .promise-card p  { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+    .promise-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .promise-card p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
     .promise-text .section-sub { margin-bottom: 28px; }
-    .region-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .region-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
     .region-chip {
-      display: flex; align-items: center; gap: 6px;
-      background: rgba(27,79,138,.08); color: var(--primary);
-      font-size: .83rem; font-weight: 700; padding: 7px 16px; border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(27,79,138,.08);
+      color: var(--primary);
+      font-size: .83rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 50px;
     }
     .region-chip i { font-size: .75rem; }
 
-    /* ===== GALLERY ===== */
-    .gallery { padding: 90px 0; }
-    .gallery-header { text-align: center; margin-bottom: 48px; }
-
-    /* Tabs */
-    .gallery-tabs {
-      display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap;
+    /* ===== GALLERY SECTION ===== */
+    .gallery {
+      padding: 90px 0;
     }
-    .tab-btn {
-      padding: 10px 26px; border-radius: 50px; border: 2px solid var(--primary);
-      background: transparent; color: var(--primary);
-      font-size: .9rem; font-weight: 700; cursor: pointer; transition: var(--transition);
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--primary); color: #fff;
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 48px;
     }
 
     /* Carousel */
-    .carousel-wrapper { position: relative; overflow: hidden; border-radius: 20px; }
-    .carousel-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
-    .carousel-slide { min-width: 100%; position: relative; }
-    .carousel-slide img {
-      width: 100%; height: 480px; object-fit: cover;
-      object-position: center; border-radius: 20px;
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .carousel-slide img,
+    .carousel-slide .slide-placeholder {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .carousel-slide .slide-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 4rem;
+      color: rgba(255,255,255,.8);
+      border-radius: 20px;
     }
     .slide-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,.65));
-      color: #fff; padding: 30px 28px 24px;
+      color: #fff;
+      padding: 30px 28px 24px;
       border-radius: 0 0 20px 20px;
     }
     .slide-caption h4 { font-size: 1.05rem; font-weight: 800; }
     .slide-caption p  { font-size: .83rem; opacity: .8; margin-top: 3px; }
-    .slide-badge {
-      display: inline-block; margin-bottom: 6px;
-      padding: 2px 12px; border-radius: 50px; font-size: .72rem; font-weight: 700;
-    }
-    .slide-badge.before { background: rgba(255,80,80,.8); }
-    .slide-badge.after  { background: rgba(27,200,100,.8); }
 
     .carousel-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 46px; height: 46px; border-radius: 50%;
-      background: rgba(255,255,255,.9); border: none; cursor: pointer;
-      font-size: 1rem; color: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,.2); transition: var(--transition); z-index: 10;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.9);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      transition: var(--transition);
+      z-index: 10;
     }
     .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
     .carousel-btn.prev { left: 14px; }
     .carousel-btn.next { right: 14px; }
-    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-    .carousel-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(27,79,138,.2); cursor: pointer; transition: var(--transition); border: none;
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
     }
-    .carousel-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(27,79,138,.2);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .carousel-dot.active {
+      background: var(--primary);
+      width: 24px;
+      border-radius: 4px;
+    }
 
     /* Thumbnail grid */
-    .thumb-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-top: 16px; }
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
     .thumb-item {
-      border-radius: 10px; overflow: hidden; cursor: pointer;
-      aspect-ratio: 3/4; transition: var(--transition);
-      border: 2.5px solid transparent; position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      transition: var(--transition);
+      border: 2.5px solid transparent;
     }
     .thumb-item:hover, .thumb-item.active { border-color: var(--primary); }
-    .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
-    .thumb-badge {
-      position: absolute; top: 4px; left: 4px;
-      font-size: .6rem; font-weight: 700; padding: 1px 7px; border-radius: 50px; color: #fff;
+    .thumb-item img,
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .thumb-badge.before { background: rgba(220,50,50,.85); }
-    .thumb-badge.after  { background: rgba(27,160,80,.85); }
+    .thumb-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
 
     /* ===== CTA BANNER ===== */
     .cta-banner {
       background: linear-gradient(135deg, var(--accent) 0%, #E8940A 100%);
-      padding: 70px 20px; text-align: center;
+      padding: 70px 20px;
+      text-align: center;
     }
-    .cta-banner h2 { font-size: clamp(1.5rem,4vw,2.1rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
-    .cta-banner p  { color: rgba(255,255,255,.88); font-size: 1rem; margin-bottom: 32px; line-height: 1.8; }
+    .cta-banner h2 {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
     .cta-number {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: #fff; color: var(--primary);
-      font-size: 1.5rem; font-weight: 900;
-      padding: 16px 36px; border-radius: 50px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.15); transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 900;
+      padding: 16px 36px;
+      border-radius: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+      transition: var(--transition);
     }
     .cta-number:hover { transform: scale(1.05); }
     .cta-number i { color: var(--accent); }
 
     /* ===== FOOTER ===== */
-    footer { background: var(--dark); color: rgba(255,255,255,.75); padding: 60px 0 30px; }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand h3 { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 6px; }
-    .footer-brand h3 span { color: var(--accent); }
-    .footer-brand .tagline { font-size: .83rem; color: rgba(255,255,255,.5); margin-bottom: 20px; font-style: italic; }
-    .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; }
-    .footer-contact-list i { color: var(--accent); min-width: 16px; margin-top: 3px; }
-    .footer-call-link { color: var(--accent-lt); font-weight: 700; font-size: 1.05rem; }
-    .footer-section h4 {
-      font-size: .92rem; font-weight: 800; color: #fff; margin-bottom: 18px;
-      padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.1);
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.75);
+      padding: 60px 0 30px;
     }
-    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-list li { display: flex; align-items: center; gap: 8px; font-size: .87rem; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .footer-brand h3 span { color: var(--accent); }
+    .footer-brand .tagline {
+      font-size: .83rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .88rem;
+    }
+    .footer-contact-list i {
+      color: var(--accent);
+      min-width: 16px;
+      margin-top: 3px;
+    }
+    .footer-call-link {
+      color: var(--accent-lt);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .footer-section h4 {
+      font-size: .92rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .87rem;
+    }
     .footer-list i { color: var(--primary-lt); font-size: .8rem; }
     .footer-notice {
-      background: rgba(240,165,0,.12); border: 1px solid rgba(240,165,0,.25);
-      border-radius: 10px; padding: 16px 18px;
-      font-size: .84rem; color: rgba(255,255,255,.8); line-height: 1.7; margin-top: 20px;
+      background: rgba(240,165,0,.12);
+      border: 1px solid rgba(240,165,0,.25);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: .84rem;
+      color: rgba(255,255,255,.8);
+      line-height: 1.7;
+      margin-top: 20px;
     }
     .footer-notice i { color: var(--accent); }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px; font-size: .82rem; color: rgba(255,255,255,.4);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.4);
     }
     .footer-bottom strong { color: rgba(255,255,255,.65); }
 
     /* ===== SCROLL REVEAL ===== */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .promise-inner { grid-template-columns: 1fr; gap: 36px; }
-      .footer-grid   { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .promise-inner  { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 36px; }
       .footer-grid > .footer-brand { grid-column: 1 / -1; }
-      .ba-photos { grid-template-columns: 1fr; }
-      .ba-col    { grid-template-columns: repeat(2, 1fr); }
-      .ba-arrow-col { flex-direction: row; transform: none; }
-      .ba-arrow-icon { transform: rotate(90deg); }
+      .ba-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .ba-arrow { transform: rotate(90deg); justify-self: center; }
     }
+
     @media (max-width: 600px) {
-      .hero-inner  { padding: 60px 0; }
-      .hero-stats  { gap: 16px; }
-      .before-after { padding: 36px 20px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .carousel-slide img { height: 300px; }
-      .thumb-grid { grid-template-columns: repeat(5,1fr); gap: 6px; }
+      .hero-inner     { padding: 60px 0; }
+      .hero-stats     { gap: 16px; }
+      .services       { padding: 70px 0 60px; }
+      .promise        { padding: 70px 0; }
+      .gallery        { padding: 70px 0; }
+      .before-after   { padding: 36px 22px; }
+      .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
+      .carousel-slide img,
+      .carousel-slide .slide-placeholder { height: 280px; }
+      .thumb-grid     { grid-template-columns: repeat(3,1fr); gap: 8px; }
+      .ba-box-inner   { height: 130px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FAB -->
+  <!-- ============================
+       FLOATING CALL BUTTON
+  ============================= -->
   <a href="tel:01021873789" class="fab-call" aria-label="전화 연결">
     <i class="fas fa-phone"></i>
   </a>
 
-  <!-- NAVBAR -->
+  <!-- ============================
+       NAVBAR
+  ============================= -->
   <header class="navbar" id="navbar">
     <div class="container">
       <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
@@ -451,14 +814,17 @@
         보양<span>닷컴</span>
       </a>
       <a href="tel:01021873789" class="nav-cta">
-        <i class="fas fa-phone-alt"></i> 010-2187-3789
+        <i class="fas fa-phone-alt"></i>
+        010-2187-3789
       </a>
     </div>
   </header>
 
   <main>
 
-    <!-- HERO -->
+    <!-- ============================
+         HERO
+    ============================= -->
     <section class="hero" id="hero">
       <div class="hero-bg-pattern"></div>
       <div class="hero-decoration"></div>
@@ -469,7 +835,7 @@
             성남 · 광주 · 위례 경기 남부 전 지역
           </div>
           <h1>
-            인테리어 보양 &amp;<br />
+            인테리어 보양 &<br />
             입주 청소 전문<br />
             <em>보양닷컴</em>
           </h1>
@@ -480,10 +846,12 @@
           </p>
           <div class="hero-actions">
             <a href="tel:01021873789" class="btn btn-accent">
-              <i class="fas fa-phone-alt"></i> 무료 견적 전화
+              <i class="fas fa-phone-alt"></i>
+              무료 견적 전화
             </a>
-            <a href="#gallery" class="hero-call">
-              <i class="fas fa-images"></i> 실제 작업 사진 보기
+            <a href="#services" class="hero-call">
+              <i class="fas fa-chevron-down"></i>
+              서비스 알아보기
             </a>
           </div>
           <div class="hero-stats">
@@ -506,7 +874,9 @@
       </div>
     </section>
 
-    <!-- TRUST BAR -->
+    <!-- ============================
+         TRUST BAR
+    ============================= -->
     <div class="trust-bar">
       <div class="container">
         <div class="trust-item"><i class="fas fa-check-circle"></i> 전문가 직접 시공</div>
@@ -517,7 +887,9 @@
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- ============================
+         SERVICES SECTION
+    ============================= -->
     <section class="services" id="services">
       <div class="container">
         <div class="services-header reveal">
@@ -527,86 +899,64 @@
         </div>
 
         <div class="services-grid">
+          <!-- 인테리어 보양 카드 -->
           <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">🛡️</div>
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">
+              🛡️
+            </div>
             <div class="service-card-body">
               <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
               <h3>인테리어 보양</h3>
-              <p>승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.</p>
+              <p>
+                승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.
+              </p>
               <span class="service-tag">PP 보드 사용</span>
               <span class="service-tag" style="margin-left:6px;">흠집 ZERO</span>
             </div>
           </article>
+
+          <!-- 입주 청소 카드 -->
           <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">🧹</div>
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">
+              🧹
+            </div>
             <div class="service-card-body">
               <div class="service-icon" style="background:rgba(34,139,34,.1);color:#228b22;"><i class="fas fa-broom"></i></div>
               <h3>입주 / 이사 청소</h3>
-              <p>구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.</p>
+              <p>
+                구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.
+              </p>
               <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;">고품격 클리닝</span>
               <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;margin-left:6px;">먼지 ZERO</span>
             </div>
           </article>
         </div>
 
-        <!-- Before / After 실제 사진 비교 -->
+        <!-- Before / After -->
         <div class="before-after reveal">
-          <h3>📸 실제 현장 – 보양 전 · 후 비교</h3>
-          <p>보양닷컴의 시공이 만들어내는 확실한 차이를 직접 확인하세요</p>
-
-          <div class="ba-photos">
-            <!-- 보양 전 -->
-            <div class="ba-col">
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/FkR9xoCU" alt="승강기 보양 전 1" loading="lazy" />
-                <span class="ba-label">BEFORE</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/vKr59j7n" alt="승강기 보양 전 2" loading="lazy" />
-                <span class="ba-label">BEFORE</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/SeOdVwH5" alt="승강기 보양 전 3" loading="lazy" />
-                <span class="ba-label">BEFORE</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/mATH85HT" alt="승강기 보양 전 4" loading="lazy" />
-                <span class="ba-label">BEFORE</span>
-              </div>
+          <h3>🎯 작업 전 · 후 차이를 직접 확인하세요</h3>
+          <p>보양닷컴의 꼼꼼한 작업이 만들어내는 확실한 차이</p>
+          <div class="ba-grid">
+            <div class="ba-box ba-box-before">
+              <div class="ba-box-inner">🏗️</div>
+              <span class="ba-label">BEFORE</span>
             </div>
-
-            <!-- 화살표 -->
-            <div class="ba-arrow-col">
-              <div class="ba-arrow-icon"><i class="fas fa-arrow-right"></i></div>
-              <div class="ba-arrow-text">보양 시공</div>
-            </div>
-
-            <!-- 보양 후 -->
-            <div class="ba-col">
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/sAHkKtcV" alt="승강기 보양 후 1" loading="lazy" />
-                <span class="ba-label" style="background:rgba(27,160,80,.7);">AFTER</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/a6UUE6O7" alt="승강기 보양 후 2" loading="lazy" />
-                <span class="ba-label" style="background:rgba(27,160,80,.7);">AFTER</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/qjRVDEFu" alt="승강기 보양 후 3" loading="lazy" />
-                <span class="ba-label" style="background:rgba(27,160,80,.7);">AFTER</span>
-              </div>
-              <div class="ba-img-wrap">
-                <img src="https://www.genspark.ai/api/files/s/W4slNXJb" alt="승강기 보양 후 4" loading="lazy" />
-                <span class="ba-label" style="background:rgba(27,160,80,.7);">AFTER</span>
-              </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-box ba-box-after">
+              <div class="ba-box-inner">✨</div>
+              <span class="ba-label">AFTER</span>
             </div>
           </div>
-
-        </div><!-- /before-after -->
+          <p style="margin-top:20px;font-size:.88rem;color:rgba(255,255,255,.6);">
+            📸 실제 현장 사진은 갤러리 섹션에서 확인하세요
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- PROMISE -->
+    <!-- ============================
+         PROMISE SECTION
+    ============================= -->
     <section class="promise" id="promise">
       <div class="container">
         <div class="promise-inner">
@@ -625,10 +975,12 @@
             </div>
             <div style="margin-top:32px;">
               <a href="tel:01021873789" class="btn btn-primary">
-                <i class="fas fa-phone-alt"></i> 지금 바로 전화하기
+                <i class="fas fa-phone-alt"></i>
+                지금 바로 전화하기
               </a>
             </div>
           </div>
+
           <div class="promise-cards reveal">
             <div class="promise-card">
               <div class="promise-card-icon"><i class="fas fa-won-sign"></i></div>
@@ -656,124 +1008,132 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- ============================
+         GALLERY SECTION
+    ============================= -->
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery-header reveal">
           <span class="section-tag">작업 갤러리</span>
           <h2 class="section-title">실제 현장 작업 사진</h2>
-          <p class="section-sub" style="margin:0 auto;">성남·광주·위례 현장에서 직접 촬영한 보양닷컴의 실제 시공 사진입니다.</p>
+          <p class="section-sub" style="margin:0 auto;">성남·광주·위례 현장에서 직접 작업한 보양닷컴의 시공 현장입니다.</p>
         </div>
 
-        <!-- 탭 -->
-        <div class="gallery-tabs">
-          <button class="tab-btn active" data-tab="all">전체 보기</button>
-          <button class="tab-btn" data-tab="before">보양 전</button>
-          <button class="tab-btn" data-tab="after">보양 후</button>
-        </div>
-
-        <!-- 메인 캐러셀 -->
+        <!-- Main Carousel -->
         <div class="carousel-wrapper reveal" id="carousel">
           <div class="carousel-track" id="carouselTrack">
 
-            <!-- 보양 전 4장 -->
-            <div class="carousel-slide" data-type="before">
-              <img src="https://www.genspark.ai/api/files/s/FkR9xoCU" alt="승강기 보양 전 – 바닥 보호 전 상태" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1B4F8A,#2A6CC4);">
+                🛡️
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">보양 시공 현장 #1</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge before">보양 전</span>
-                <h4>승강기 내부 – 보양 시공 전</h4>
-                <p>PP 보드 시공 전, 승강기 바닥 및 벽면 원상태</p>
+                <h4>세대 내부 바닥 보양 작업</h4>
+                <p>PP 보드를 활용한 철저한 바닥 보호 시공</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="before">
-              <img src="https://www.genspark.ai/api/files/s/vKr59j7n" alt="승강기 버튼 패널 보양 전" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5c3a,#28835a);">
+                🧹
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">입주 청소 현장 #1</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge before">보양 전</span>
-                <h4>승강기 버튼 패널 – 보양 시공 전</h4>
-                <p>조작 패널 및 내부 측면 원상태 확인</p>
+                <h4>신규 아파트 입주 청소</h4>
+                <p>구석구석 먼지 제거 및 고품격 클리닝</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="before">
-              <img src="https://www.genspark.ai/api/files/s/SeOdVwH5" alt="승강기 문 보양 전" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#4a2c8a,#6b4cba);">
+                🏗️
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">승강기 보양 작업</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge before">보양 전</span>
-                <h4>승강기 도어 – 보양 시공 전</h4>
-                <p>승강기 문짝 및 내부 도어 원상태</p>
+                <h4>승강기 내부 완벽 보양</h4>
+                <p>이사·공사 중 승강기 스크래치 방지 작업</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="before">
-              <img src="https://www.genspark.ai/api/files/s/mATH85HT" alt="승강기 천장 보양 전" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#8a4a1a,#c47028);">
+                🏢
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">복도 보양 작업</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge before">보양 전</span>
-                <h4>승강기 천장 – 보양 시공 전</h4>
-                <p>CCTV 및 천장 구조 원상태</p>
+                <h4>공용 복도 보양 시공</h4>
+                <p>세대 외부 복도까지 꼼꼼한 보호 처리</p>
               </div>
             </div>
 
-            <!-- 보양 후 5장 -->
-            <div class="carousel-slide" data-type="after">
-              <img src="https://www.genspark.ai/api/files/s/sAHkKtcV" alt="승강기 보양 후 – 전체 완료" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5879,#207ba8);">
+                ✨
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">이사 청소 완료</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge after">보양 후</span>
-                <h4>승강기 전체 보양 완료</h4>
-                <p>바닥·벽면·천장 전 구역 PP 보드 & 테이핑 완료</p>
+                <h4>이사 후 완벽 청소 완료</h4>
+                <p>새집으로 쾌적한 새 출발 준비 완성</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="after">
-              <img src="https://www.genspark.ai/api/files/s/a6UUE6O7" alt="승강기 측면 보양 후" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#3a5a1a,#5a8a28);">
+                🏠
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">위례 현장 시공</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge after">보양 후</span>
-                <h4>승강기 측면 벽 보양 완료</h4>
-                <p>파란 테이프와 보호재로 스크래치 완벽 방지</p>
+                <h4>위례 신도시 보양 시공</h4>
+                <p>위례 지역 대단지 아파트 전문 시공</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="after">
-              <img src="https://www.genspark.ai/api/files/s/qjRVDEFu" alt="승강기 코너 보양 후" loading="lazy" />
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#5a1a1a,#8a2828);">
+                🔨
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">성남 현장 시공</span>
+              </div>
               <div class="slide-caption">
-                <span class="slide-badge after">보양 후</span>
-                <h4>승강기 코너 보양 완료</h4>
-                <p>모서리까지 꼼꼼하게 보호재 시공 완료</p>
+                <h4>성남시 보양·청소 복합 시공</h4>
+                <p>인테리어 보양부터 입주 청소까지 원스톱</p>
               </div>
             </div>
 
-            <div class="carousel-slide" data-type="after">
-              <img src="https://www.genspark.ai/api/files/s/W4slNXJb" alt="승강기 문 보양 후" loading="lazy" />
-              <div class="slide-caption">
-                <span class="slide-badge after">보양 후</span>
-                <h4>승강기 도어 보양 완료</h4>
-                <p>도어 및 프레임 전체 보호 처리 완료</p>
+            <div class="carousel-slide">
+              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a3a5a,#2856a8);">
+                💯
+                <span style="font-size:1rem;font-weight:700;margin-top:8px;">완공 후 점검</span>
               </div>
-            </div>
-
-            <div class="carousel-slide" data-type="after">
-              <img src="https://www.genspark.ai/api/files/s/BsUEwnXc" alt="승강기 출입구 보양 후" loading="lazy" />
               <div class="slide-caption">
-                <span class="slide-badge after">보양 후</span>
-                <h4>승강기 출입구 보양 완료</h4>
-                <p>출입문 외부까지 전체 보양 시공 완벽 마무리</p>
+                <h4>시공 후 꼼꼼한 마무리 점검</h4>
+                <p>모든 작업 후 최종 품질 점검으로 완벽 마무리</p>
               </div>
             </div>
 
           </div><!-- /track -->
 
-          <button class="carousel-btn prev" id="prevBtn" aria-label="이전"><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" id="nextBtn" aria-label="다음"><i class="fas fa-chevron-right"></i></button>
+          <button class="carousel-btn prev" id="prevBtn" aria-label="이전">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="다음">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div><!-- /carousel-wrapper -->
 
+        <!-- Dots -->
         <div class="carousel-dots" id="carouselDots"></div>
 
-        <!-- 썸네일 -->
-        <div class="thumb-grid" id="thumbGrid"></div>
-
+        <!-- Thumbnail Grid -->
+        <div class="thumb-grid" id="thumbGrid">
+          <!-- generated by JS -->
+        </div>
       </div>
     </section>
 
-    <!-- CTA BANNER -->
+    <!-- ============================
+         CTA BANNER
+    ============================= -->
     <section class="cta-banner" id="contact">
       <div class="reveal">
         <h2>지금 바로 무료 견적을 받아보세요!</h2>
@@ -782,17 +1142,22 @@
           <strong style="color:#fff;">문자를 남겨주시면 바로 연락드리겠습니다.</strong>
         </p>
         <a href="tel:01021873789" class="cta-number">
-          <i class="fas fa-phone-alt"></i> 010-2187-3789
+          <i class="fas fa-phone-alt"></i>
+          010-2187-3789
         </a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ============================
+       FOOTER
+  ============================= -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
           <h3><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:8px;"></i>보양<span>닷컴</span></h3>
           <p class="tagline">"내 집처럼 꼼꼼하고 깔끔하게"</p>
@@ -804,14 +1169,22 @@
                 <a href="tel:01021873789" class="footer-call-link">010-2187-3789</a>
               </div>
             </li>
-            <li><i class="fas fa-comment-alt"></i><span>문자 주시면 바로 연락드립니다</span></li>
-            <li><i class="fas fa-map-marker-alt"></i><span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span></li>
+            <li>
+              <i class="fas fa-comment-alt"></i>
+              <span>문자 주시면 바로 연락드립니다</span>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span>
+            </li>
           </ul>
           <div class="footer-notice">
             <i class="fas fa-info-circle"></i>
             작업 중에는 전화를 못 받을 수 있으니, 문자를 남겨주시면 바로 연락드리겠습니다.
           </div>
         </div>
+
+        <!-- Services -->
         <div class="footer-section">
           <h4>제공 서비스</h4>
           <ul class="footer-list">
@@ -823,6 +1196,8 @@
             <li><i class="fas fa-chevron-right"></i> 이사 청소</li>
           </ul>
         </div>
+
+        <!-- Service Area -->
         <div class="footer-section">
           <h4>주요 서비스 지역</h4>
           <ul class="footer-list">
@@ -834,107 +1209,93 @@
             <li><i class="fas fa-map-pin"></i> 경기 남부 전 지역</li>
           </ul>
         </div>
-      </div>
+
+      </div><!-- /footer-grid -->
+
       <div class="footer-bottom">
         <span>© 2025 보양닷컴. All rights reserved.</span>
         <span>
           <strong>상호명:</strong> 보양닷컴 &nbsp;|&nbsp;
-          <strong>대표번호:</strong>
-          <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a>
+          <strong>대표번호:</strong> <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a>
         </span>
       </div>
     </div>
   </footer>
 
+  <!-- ============================
+       JAVASCRIPT
+  ============================= -->
   <script>
-    /* ===== Navbar scroll ===== */
+    /* ----- Navbar scroll effect ----- */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    /* ===== Scroll Reveal ===== */
-    const revealObs = new IntersectionObserver(entries => {
+    /* ----- Scroll Reveal ----- */
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ===== Gallery ===== */
-    const allSlides = Array.from(document.querySelectorAll('.carousel-slide'));
-    const track     = document.getElementById('carouselTrack');
-    const dotsWrap  = document.getElementById('carouselDots');
-    const thumbWrap = document.getElementById('thumbGrid');
-
-    let currentTab = 'all';
-    let visibleSlides = [];
-    let current = 0;
+    /* ----- Carousel ----- */
+    const track  = document.getElementById('carouselTrack');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total  = slides.length;
+    let current  = 0;
     let timer;
 
-    /* 썸네일 데이터 */
-    const thumbData = [
-      { src: 'https://www.genspark.ai/api/files/s/FkR9xoCU', type: 'before', alt: '보양 전 1' },
-      { src: 'https://www.genspark.ai/api/files/s/vKr59j7n', type: 'before', alt: '보양 전 2' },
-      { src: 'https://www.genspark.ai/api/files/s/SeOdVwH5', type: 'before', alt: '보양 전 3' },
-      { src: 'https://www.genspark.ai/api/files/s/mATH85HT', type: 'before', alt: '보양 전 4' },
-      { src: 'https://www.genspark.ai/api/files/s/sAHkKtcV', type: 'after',  alt: '보양 후 1' },
-      { src: 'https://www.genspark.ai/api/files/s/a6UUE6O7', type: 'after',  alt: '보양 후 2' },
-      { src: 'https://www.genspark.ai/api/files/s/qjRVDEFu', type: 'after',  alt: '보양 후 3' },
-      { src: 'https://www.genspark.ai/api/files/s/W4slNXJb', type: 'after',  alt: '보양 후 4' },
-      { src: 'https://www.genspark.ai/api/files/s/BsUEwnXc', type: 'after',  alt: '보양 후 5' },
+    // Build dots
+    const dotsContainer = document.getElementById('carouselDots');
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', `슬라이드 ${i+1}`);
+      btn.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(btn);
+    });
+
+    // Build thumbnails
+    const thumbGrid = document.getElementById('thumbGrid');
+    const thumbEmojis = ['🛡️','🧹','🏗️','🏢','✨','🏠','🔨','💯'];
+    const thumbColors = [
+      'linear-gradient(135deg,#1B4F8A,#2A6CC4)',
+      'linear-gradient(135deg,#1a5c3a,#28835a)',
+      'linear-gradient(135deg,#4a2c8a,#6b4cba)',
+      'linear-gradient(135deg,#8a4a1a,#c47028)',
+      'linear-gradient(135deg,#1a5879,#207ba8)',
+      'linear-gradient(135deg,#3a5a1a,#5a8a28)',
+      'linear-gradient(135deg,#5a1a1a,#8a2828)',
+      'linear-gradient(135deg,#1a3a5a,#2856a8)',
     ];
-
-    function buildDots(count) {
-      dotsWrap.innerHTML = '';
-      for (let i = 0; i < count; i++) {
-        const btn = document.createElement('button');
-        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        btn.setAttribute('aria-label', `슬라이드 ${i+1}`);
-        btn.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(btn);
-      }
+    // Only show first 6 thumbs in grid (2 rows × 3 cols)
+    for (let i = 0; i < Math.min(total, 6); i++) {
+      const div = document.createElement('div');
+      div.className = 'thumb-item' + (i === 0 ? ' active' : '');
+      div.innerHTML = `<div class="thumb-placeholder" style="background:${thumbColors[i]};font-size:2rem;">${thumbEmojis[i]}</div>`;
+      div.addEventListener('click', () => goTo(i));
+      thumbGrid.appendChild(div);
     }
 
-    function buildThumbs(tab) {
-      thumbWrap.innerHTML = '';
-      const filtered = thumbData.filter(t => tab === 'all' || t.type === tab);
-      filtered.forEach((t, i) => {
-        const div = document.createElement('div');
-        div.className = 'thumb-item' + (i === 0 ? ' active' : '');
-        div.innerHTML = `
-          <img src="${t.src}" alt="${t.alt}" loading="lazy" />
-          <span class="thumb-badge ${t.type}">${t.type === 'before' ? '전' : '후'}</span>
-        `;
-        div.addEventListener('click', () => goTo(i));
-        thumbWrap.appendChild(div);
-      });
+    function updateUI() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+      document.querySelectorAll('.thumb-item').forEach((t, i) =>
+        t.classList.toggle('active', i === current)
+      );
     }
 
-    function filterSlides(tab) {
-      allSlides.forEach(s => {
-        const match = tab === 'all' || s.dataset.type === tab;
-        s.style.display = match ? 'block' : 'none';
-        s.style.minWidth = match ? '100%' : '0';
-      });
-      visibleSlides = allSlides.filter(s => tab === 'all' || s.dataset.type === tab);
-      buildDots(visibleSlides.length);
-      buildThumbs(tab);
-      goTo(0, true);
-    }
-
-    function goTo(index, skipTimer) {
-      current = (index + visibleSlides.length) % visibleSlides.length;
-
-      // 현재 slide의 track 내 실제 위치 계산
-      const targetSlide = visibleSlides[current];
-      const allVisible  = Array.from(track.children).filter(s => s.style.display !== 'none');
-      const posIdx      = allVisible.indexOf(targetSlide);
-      track.style.transform = `translateX(-${posIdx * 100}%)`;
-
-      document.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i === current));
-      document.querySelectorAll('.thumb-item').forEach((t,i) => t.classList.toggle('active', i === current));
-      if (!skipTimer) resetTimer();
+    function goTo(index) {
+      current = (index + total) % total;
+      updateUI();
+      resetTimer();
     }
 
     function next() { goTo(current + 1); }
@@ -942,11 +1303,14 @@
 
     document.getElementById('nextBtn').addEventListener('click', next);
     document.getElementById('prevBtn').addEventListener('click', prev);
+
+    // Keyboard support
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  prev();
       if (e.key === 'ArrowRight') next();
     });
 
+    // Touch / swipe support
     let touchStartX = 0;
     const carouselEl = document.getElementById('carousel');
     carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
@@ -955,30 +1319,19 @@
       if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
     });
 
+    // Auto-play
     function startTimer() { timer = setInterval(next, 4500); }
     function resetTimer()  { clearInterval(timer); startTimer(); }
-
-    /* 탭 버튼 */
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentTab = btn.dataset.tab;
-        clearInterval(timer);
-        filterSlides(currentTab);
-        startTimer();
-      });
-    });
-
-    /* 초기화 */
-    filterSlides('all');
     startTimer();
 
-    /* ===== Smooth anchor ===== */
+    /* ----- Smooth anchor scroll ----- */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   </script>
