@@ -151,7 +151,10 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0D2B55 0%, #1B4F8A 50%, #1e6fa8 100%);
+      background:
+        linear-gradient(90deg, rgba(13,43,85,.95) 0%, rgba(27,79,138,.86) 42%, rgba(13,43,85,.38) 100%),
+        url('images/after1.jpg') right center / cover no-repeat;
+      background-color: #0D2B55;
     }
     .hero-bg-pattern {
       position: absolute;
@@ -161,15 +164,7 @@
       pointer-events: none;
     }
     .hero-decoration {
-      position: absolute;
-      right: -60px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: min(500px, 55vw);
-      height: min(500px, 55vw);
-      border-radius: 50%;
-      background: rgba(240,165,0,.06);
-      border: 2px solid rgba(240,165,0,.12);
+      display: none;
     }
     .hero-decoration::before {
       content: '';
