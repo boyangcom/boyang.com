@@ -4,35 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="naver-site-verification" content="9bf99c3fd1a9aa3ff2361561365655458421a41a" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="보양닷컴 – 인테리어 보양 & 입주 청소 전문. 성남, 광주, 위례 경기 남부 전 지역 신속 출동. 대표번호 010-2187-3789" />
-  <title>보양닷컴 – 인테리어 보양 & 입주 청소 전문</title>
+  <meta name="description" content="성남·광주·위례 인테리어 보양 전문 보양닷컴. 승강기 보양, 복도 보양, 세대 내부 보양, 입주청소 전문. 무료견적 010-2187-3789" />
+  <meta name="keywords" content="성남 보양업체, 위례 보양, 광주 보양, 승강기 보양, 복도 보양, PP보드 보양, 인테리어 보양, 입주청소" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="보양닷컴 – 인테리어 보양 & 입주청소 전문" />
+  <meta property="og:description" content="성남·광주·위례 경기 남부 인테리어 보양 전문. 승강기·복도·세대 보양 무료견적 상담." />
+  <meta property="og:image" content="https://보양닷컴.com/images/logo.png" />
+  <meta property="og:url" content="https://보양닷컴.com" />
+  <title>성남·위례·광주 인테리어 보양 전문 | 보양닷컴</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:    #1B4F8A;   /* 신뢰감 있는 딥 블루 */
+      --primary: #1B4F8A;
       --primary-lt: #2A6CC4;
-      --accent:     #F0A500;   /* 따뜻한 골드 */
-      --accent-lt:  #FFC23E;
-      --dark:       #1A1A2E;
-      --text:       #333344;
-      --muted:      #6E7A8A;
-      --bg-light:   #F5F8FC;
-      --bg-white:   #FFFFFF;
-      --radius:     12px;
-      --shadow:     0 4px 24px rgba(27,79,138,.12);
+      --accent: #F0A500;
+      --accent-lt: #FFC23E;
+      --dark: #1A1A2E;
+      --text: #333344;
+      --muted: #6E7A8A;
+      --bg-light: #F5F8FC;
+      --bg-white: #FFFFFF;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(27,79,138,.12);
       --transition: .3s ease;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Noto Sans KR', sans-serif;
       color: var(--text);
@@ -40,11 +42,9 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
     img { display: block; max-width: 100%; }
-    a   { text-decoration: none; color: inherit; }
+    a { text-decoration: none; color: inherit; }
 
-    /* ===== UTILITY ===== */
     .container {
       width: 100%;
       max-width: 1100px;
@@ -91,15 +91,9 @@
       transition: var(--transition);
       border: none;
     }
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
+    .btn-primary { background: var(--primary); color: #fff; }
     .btn-primary:hover { background: var(--primary-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,79,138,.3); }
-    .btn-accent {
-      background: var(--accent);
-      color: #fff;
-    }
+    .btn-accent { background: var(--accent); color: #fff; }
     .btn-accent:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,165,0,.3); }
 
     /* ===== NAV BAR ===== */
@@ -107,49 +101,53 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      height: 64px;
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(27,79,138,.1);
-      padding: 8px 0;
+      overflow: hidden;
       transition: box-shadow var(--transition);
     }
     .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
     .navbar .container {
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
     }
     .nav-logo {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-      }
-    .nav-logo {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+      font-size: 1.28rem;
+      font-weight: 900;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      min-width: 0;
     }
     .nav-logo span { color: var(--accent); }
-    .nav-logo .dot { color: var(--accent); font-size: .7em; vertical-align: super; }
+    .logo-img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
     .nav-cta {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       background: var(--accent);
       color: #fff;
       font-weight: 700;
       font-size: .9rem;
-      padding: 9px 20px;
+      padding: 9px 18px;
       border-radius: 50px;
       transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .nav-cta:hover { background: var(--accent-lt); transform: translateY(-1px); }
     .nav-cta i { font-size: .85rem; }
@@ -162,7 +160,7 @@
       align-items: center;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(13,43,85,.95) 0%, rgba(27,79,138,.86) 42%, rgba(13,43,85,.38) 100%),
+        linear-gradient(90deg, rgba(13,43,85,.96) 0%, rgba(27,79,138,.86) 42%, rgba(13,43,85,.38) 100%),
         url('images/after1.jpg') right center / cover no-repeat;
       background-color: #0D2B55;
     }
@@ -173,21 +171,8 @@
                         radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 40%);
       pointer-events: none;
     }
-    .hero-decoration {
-      display: none;
-    }
-    .hero-decoration::before {
-      content: '';
-      position: absolute;
-      inset: 30px;
-      border-radius: 50%;
-      border: 2px solid rgba(240,165,0,.1);
-    }
     .hero .container { position: relative; z-index: 2; }
-    .hero-inner {
-      max-width: 620px;
-      padding: 80px 0;
-    }
+    .hero-inner { max-width: 620px; padding: 80px 0; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -202,7 +187,6 @@
       margin-bottom: 24px;
       letter-spacing: .05em;
     }
-    .hero-badge i { font-size: .75rem; }
     .hero h1 {
       font-size: clamp(2rem, 6vw, 3.4rem);
       font-weight: 900;
@@ -210,23 +194,15 @@
       line-height: 1.2;
       margin-bottom: 14px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--accent-lt);
-    }
+    .hero h1 em { font-style: normal; color: var(--accent-lt); }
     .hero-slogan {
       font-size: clamp(.95rem, 2.5vw, 1.15rem);
-      color: rgba(255,255,255,.8);
+      color: rgba(255,255,255,.84);
       margin-bottom: 36px;
       line-height: 1.8;
     }
     .hero-slogan strong { color: #fff; }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
     .hero-call {
       display: inline-flex;
       align-items: center;
@@ -242,29 +218,13 @@
     }
     .hero-call:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
     .hero-call i { color: var(--accent-lt); }
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .hero-stat {
-      display: flex;
-      flex-direction: column;
-    }
-    .hero-stat-num {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: var(--accent-lt);
-      line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: .78rem;
-      color: rgba(255,255,255,.65);
-      margin-top: 4px;
-    }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 24px; }
+    .hero-stat { display: flex; flex-direction: column; }
+    .hero-stat-num { font-size: 1.7rem; font-weight: 900; color: var(--accent-lt); line-height: 1; }
+    .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 4px; }
     .hero-divider { width: 1px; background: rgba(255,255,255,.2); height: 40px; align-self: center; }
 
-    /* ===== FLOATING CALL BUTTON ===== */
+    /* ===== FAB ===== */
     .fab-call {
       position: fixed;
       bottom: 28px;
@@ -286,7 +246,7 @@
     .fab-call:hover { transform: scale(1.1); }
     @keyframes pulse {
       0%, 100% { box-shadow: 0 6px 24px rgba(240,165,0,.5); }
-      50%       { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
+      50% { box-shadow: 0 6px 40px rgba(240,165,0,.75); }
     }
 
     /* ===== TRUST BAR ===== */
@@ -295,40 +255,15 @@
       padding: 20px 0;
       border-bottom: 1px solid rgba(27,79,138,.07);
     }
-    .trust-bar .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px 40px;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .9rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .trust-item i {
-      color: var(--accent);
-      font-size: 1rem;
-    }
+    .trust-bar .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: var(--primary); }
+    .trust-item i { color: var(--accent); font-size: 1rem; }
 
-    /* ===== SERVICES SECTION ===== */
-    .services {
-      padding: 100px 0 80px;
-    }
-    .services-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+    /* ===== SERVICES ===== */
+    .services { padding: 100px 0 80px; }
+    .services-header { text-align: center; margin-bottom: 60px; }
     .services-header .section-sub { margin: 0 auto; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
     .service-card {
       background: var(--bg-white);
       border: 1.5px solid rgba(27,79,138,.1);
@@ -338,11 +273,6 @@
       box-shadow: var(--shadow);
     }
     .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(27,79,138,.16); }
-    .service-card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
     .service-card-img-placeholder {
       width: 100%;
       height: 220px;
@@ -364,17 +294,8 @@
       color: var(--primary);
       margin-bottom: 16px;
     }
-    .service-card-body h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-    .service-card-body p {
-      color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.75;
-    }
+    .service-card-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+    .service-card-body p { color: var(--muted); font-size: .93rem; line-height: 1.75; }
     .service-tag {
       display: inline-block;
       margin-top: 16px;
@@ -386,7 +307,7 @@
       border-radius: 50px;
     }
 
-    /* Before/After comparison */
+    /* ===== BEFORE / AFTER ===== */
     .before-after {
       margin-top: 60px;
       background: linear-gradient(135deg, #0D2B55, #1B4F8A);
@@ -395,27 +316,10 @@
       color: #fff;
       text-align: center;
     }
-    .before-after h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .before-after p {
-      color: rgba(255,255,255,.75);
-      margin-bottom: 30px;
-      font-size: .95rem;
-    }
-    .ba-photos {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-    .ba-col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
+    .before-after h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+    .before-after p { color: rgba(255,255,255,.75); margin-bottom: 30px; font-size: .95rem; }
+    .ba-photos { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: center; }
+    .ba-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .ba-img-wrap {
       position: relative;
       overflow: hidden;
@@ -423,12 +327,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,.18);
       background: rgba(255,255,255,.08);
     }
-    .ba-img-wrap img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      object-position: center;
-    }
+    .ba-img-wrap img { width: 100%; height: 260px; object-fit: cover; object-position: center; }
     .ba-label {
       position: absolute;
       top: 10px;
@@ -453,27 +352,12 @@
       font-weight: 900;
     }
     .ba-arrow i { font-size: 2rem; }
-    .ba-arrow span {
-      font-size: .75rem;
-      color: rgba(255,255,255,.7);
-      white-space: nowrap;
-    }
+    .ba-arrow span { font-size: .75rem; color: rgba(255,255,255,.7); white-space: nowrap; }
 
-    /* ===== PROMISE SECTION ===== */
-    .promise {
-      padding: 90px 0;
-      background: var(--bg-light);
-    }
-    .promise-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .promise-cards {
-      display: grid;
-      gap: 20px;
-    }
+    /* ===== PROMISE ===== */
+    .promise { padding: 90px 0; background: var(--bg-light); }
+    .promise-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .promise-cards { display: grid; gap: 20px; }
     .promise-card {
       background: var(--bg-white);
       border-radius: var(--radius);
@@ -498,24 +382,10 @@
       font-size: 1.3rem;
       color: var(--primary);
     }
-    .promise-card h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-    .promise-card p {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .promise-card h4 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .promise-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
     .promise-text .section-sub { margin-bottom: 28px; }
-    .region-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
+    .region-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
     .region-chip {
       display: flex;
       align-items: center;
@@ -529,57 +399,31 @@
     }
     .region-chip i { font-size: .75rem; }
 
-    /* ===== GALLERY SECTION ===== */
-    .gallery {
-      padding: 90px 0;
-    }
-    .gallery-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    /* Carousel */
-    .carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
-    }
-    .carousel-slide {
-      min-width: 100%;
-      position: relative;
-    }
-    .carousel-slide img,
-    .carousel-slide .slide-placeholder {
+    /* ===== GALLERY ===== */
+    .gallery { padding: 90px 0; }
+    .gallery-header { text-align: center; margin-bottom: 48px; }
+    .carousel-wrapper { position: relative; overflow: hidden; border-radius: 20px; }
+    .carousel-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+    .carousel-slide { min-width: 100%; position: relative; }
+    .carousel-slide img {
       width: 100%;
       height: 460px;
       object-fit: cover;
-      border-radius: 20px;
-    }
-    .carousel-slide .slide-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      font-size: 4rem;
-      color: rgba(255,255,255,.8);
+      object-position: center;
       border-radius: 20px;
     }
     .slide-caption {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,.65));
       color: #fff;
       padding: 30px 28px 24px;
       border-radius: 0 0 20px 20px;
     }
     .slide-caption h4 { font-size: 1.05rem; font-weight: 800; }
-    .slide-caption p  { font-size: .83rem; opacity: .8; margin-top: 3px; }
-
+    .slide-caption p { font-size: .83rem; opacity: .8; margin-top: 3px; }
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -602,34 +446,18 @@
     .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
     .carousel-btn.prev { left: 14px; }
     .carousel-btn.next { right: 14px; }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
     .carousel-dot {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: rgba(27,79,138,.2);
       cursor: pointer;
       transition: var(--transition);
       border: none;
     }
-    .carousel-dot.active {
-      background: var(--primary);
-      width: 24px;
-      border-radius: 4px;
-    }
-
-    /* Thumbnail grid */
-    .thumb-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
+    .carousel-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+    .thumb-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 16px; }
     .thumb-item {
       border-radius: 10px;
       overflow: hidden;
@@ -639,37 +467,16 @@
       border: 2.5px solid transparent;
     }
     .thumb-item:hover, .thumb-item.active { border-color: var(--primary); }
-    .thumb-item img,
-    .thumb-placeholder {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .thumb-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-    }
+    .thumb-item img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ===== CTA BANNER ===== */
+    /* ===== CTA ===== */
     .cta-banner {
       background: linear-gradient(135deg, var(--accent) 0%, #E8940A 100%);
       padding: 70px 20px;
       text-align: center;
     }
-    .cta-banner h2 {
-      font-size: clamp(1.5rem, 4vw, 2.1rem);
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .cta-banner p {
-      color: rgba(255,255,255,.88);
-      font-size: 1rem;
-      margin-bottom: 32px;
-      line-height: 1.8;
-    }
+    .cta-banner h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,.88); font-size: 1rem; margin-bottom: 32px; line-height: 1.8; }
     .cta-number {
       display: inline-flex;
       align-items: center;
@@ -687,52 +494,24 @@
     .cta-number i { color: var(--accent); }
 
     /* ===== FOOTER ===== */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,.75);
-      padding: 60px 0 30px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+    footer { background: var(--dark); color: rgba(255,255,255,.75); padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand h3 {
       font-size: 1.4rem;
       font-weight: 900;
       color: #fff;
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .footer-brand h3 span { color: var(--accent); }
-    .footer-brand .tagline {
-      font-size: .83rem;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .footer-contact-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .footer-contact-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: .88rem;
-    }
-    .footer-contact-list i {
-      color: var(--accent);
-      min-width: 16px;
-      margin-top: 3px;
-    }
-    .footer-call-link {
-      color: var(--accent-lt);
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
+    .footer-logo { width: 36px; height: 36px; object-fit: contain; border-radius: 4px; flex-shrink: 0; }
+    .footer-brand .tagline { font-size: .83rem; color: rgba(255,255,255,.5); margin-bottom: 20px; font-style: italic; }
+    .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; }
+    .footer-contact-list i { color: var(--accent); min-width: 16px; margin-top: 3px; }
+    .footer-call-link { color: var(--accent-lt); font-weight: 700; font-size: 1.05rem; }
     .footer-section h4 {
       font-size: .92rem;
       font-weight: 800;
@@ -741,18 +520,8 @@
       padding-bottom: 10px;
       border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    .footer-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-list li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: .87rem;
-    }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-list li { display: flex; align-items: center; gap: 8px; font-size: .87rem; }
     .footer-list i { color: var(--primary-lt); font-size: .8rem; }
     .footer-notice {
       background: rgba(240,165,0,.12);
@@ -778,59 +547,54 @@
     }
     .footer-bottom strong { color: rgba(255,255,255,.65); }
 
-    /* ===== SCROLL REVEAL ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .promise-inner  { grid-template-columns: 1fr; gap: 36px; }
-      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .promise-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .footer-grid > .footer-brand { grid-column: 1 / -1; }
       .ba-photos { grid-template-columns: 1fr; }
       .ba-arrow { flex-direction: row; margin: 6px auto; }
       .ba-arrow i { transform: rotate(90deg); }
+      .thumb-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .hero-inner     { padding: 60px 0; }
-      .hero-stats     { gap: 16px; }
-      .services       { padding: 70px 0 60px; }
-      .promise        { padding: 70px 0; }
-      .gallery        { padding: 70px 0; }
-      .before-after   { padding: 36px 18px; }
-      .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
-      .carousel-slide img,
-      .carousel-slide .slide-placeholder { height: 330px; }
-      .thumb-grid     { grid-template-columns: repeat(3,1fr); gap: 8px; }
+      .navbar, .navbar .container { height: 58px; }
+      .logo-img, .footer-logo { width: 30px; height: 30px; }
+      .nav-logo { font-size: 1.08rem; gap: 6px; }
+      .nav-cta { font-size: .78rem; padding: 8px 12px; }
+      .hero {
+        min-height: 86vh;
+        background:
+          linear-gradient(90deg, rgba(13,43,85,.96) 0%, rgba(27,79,138,.88) 62%, rgba(13,43,85,.56) 100%),
+          url('images/after1.jpg') center center / cover no-repeat;
+      }
+      .hero-inner { padding: 60px 0; }
+      .hero-stats { gap: 16px; }
+      .services { padding: 70px 0 60px; }
+      .promise { padding: 70px 0; }
+      .gallery { padding: 70px 0; }
+      .before-after { padding: 36px 18px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .carousel-slide img { height: 330px; }
       .ba-col { grid-template-columns: 1fr; }
       .ba-img-wrap img { height: 320px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ============================
-       FLOATING CALL BUTTON
-  ============================= -->
   <a href="tel:01021873789" class="fab-call" aria-label="전화 연결">
     <i class="fas fa-phone"></i>
   </a>
 
-  <!-- ============================
-       NAVBAR
-  ============================= -->
-  <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
-  <img src="images/logo.png" alt="보양닷컴 로고" class="logo-img">
-  보양<span>닷컴</span>
-</a>
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
+        <img src="images/logo.png" alt="보양닷컴 로고" class="logo-img">
+        보양<span>닷컴</span>
+      </a>
       <a href="tel:01021873789" class="nav-cta">
         <i class="fas fa-phone-alt"></i>
         010-2187-3789
@@ -839,13 +603,8 @@
   </header>
 
   <main>
-
-    <!-- ============================
-         HERO
-    ============================= -->
     <section class="hero" id="hero">
       <div class="hero-bg-pattern"></div>
-      <div class="hero-decoration"></div>
       <div class="container">
         <div class="hero-inner reveal">
           <div class="hero-badge">
@@ -853,7 +612,7 @@
             성남 · 광주 · 위례 경기 남부 전 지역
           </div>
           <h1>
-            인테리어 보양 &<br />
+            인테리어 보양 &amp;<br />
             입주 청소 전문<br />
             <em>보양닷컴</em>
           </h1>
@@ -867,9 +626,9 @@
               <i class="fas fa-phone-alt"></i>
               무료 견적 전화
             </a>
-            <a href="#services" class="hero-call">
-              <i class="fas fa-chevron-down"></i>
-              서비스 알아보기
+            <a href="#gallery" class="hero-call">
+              <i class="fas fa-images"></i>
+              실제 작업 사진 보기
             </a>
           </div>
           <div class="hero-stats">
@@ -892,9 +651,6 @@
       </div>
     </section>
 
-    <!-- ============================
-         TRUST BAR
-    ============================= -->
     <div class="trust-bar">
       <div class="container">
         <div class="trust-item"><i class="fas fa-check-circle"></i> 전문가 직접 시공</div>
@@ -905,9 +661,6 @@
       </div>
     </div>
 
-    <!-- ============================
-         SERVICES SECTION
-    ============================= -->
     <section class="services" id="services">
       <div class="container">
         <div class="services-header reveal">
@@ -917,40 +670,29 @@
         </div>
 
         <div class="services-grid">
-          <!-- 인테리어 보양 카드 -->
           <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">
-              🛡️
-            </div>
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f0fa,#ccd9f0);">🛡️</div>
             <div class="service-card-body">
               <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
               <h3>인테리어 보양</h3>
-              <p>
-                승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.
-              </p>
+              <p>승강기 · 복도 · 세대 내부 바닥까지 PP 보드를 사용한 철저한 보호 작업. 공사 중 발생하는 스크래치와 충격으로부터 소중한 공간을 완벽하게 지킵니다.</p>
               <span class="service-tag">PP 보드 사용</span>
               <span class="service-tag" style="margin-left:6px;">흠집 ZERO</span>
             </div>
           </article>
 
-          <!-- 입주 청소 카드 -->
           <article class="service-card reveal">
-            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">
-              🧹
-            </div>
+            <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#e8f7ee,#c8ecd9);">🧹</div>
             <div class="service-card-body">
               <div class="service-icon" style="background:rgba(34,139,34,.1);color:#228b22;"><i class="fas fa-broom"></i></div>
               <h3>입주 / 이사 청소</h3>
-              <p>
-                구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.
-              </p>
+              <p>구석구석 보이지 않는 먼지까지 제거하는 고품격 클리닝 서비스. 새집으로 이사하기 전, 완벽하게 청소하여 쾌적한 새 출발을 도와드립니다.</p>
               <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;">고품격 클리닝</span>
               <span class="service-tag" style="background:rgba(34,139,34,.08);color:#228b22;margin-left:6px;">먼지 ZERO</span>
             </div>
           </article>
         </div>
 
-        <!-- Before / After -->
         <div class="before-after reveal">
           <h3>🎯 실제 승강기 보양 시공 전 · 후</h3>
           <p>작업 전 원상태부터 보양 완료 후까지, 보양닷컴의 꼼꼼한 마감 품질을 확인하세요.</p>
@@ -995,19 +737,13 @@
       </div>
     </section>
 
-    <!-- ============================
-         PROMISE SECTION
-    ============================= -->
     <section class="promise" id="promise">
       <div class="container">
         <div class="promise-inner">
           <div class="promise-text reveal">
             <span class="section-tag">보양닷컴의 약속</span>
             <h2 class="section-title">왜 보양닷컴을<br />선택해야 할까요?</h2>
-            <p class="section-sub">
-              불필요한 비용 없이, 다년간의 노하우로 빠르고 정확하게.<br />
-              경기 남부 어디서든 신속하게 출동합니다.
-            </p>
+            <p class="section-sub">불필요한 비용 없이, 다년간의 노하우로 빠르고 정확하게.<br />경기 남부 어디서든 신속하게 출동합니다.</p>
             <div class="region-chips">
               <span class="region-chip"><i class="fas fa-map-pin"></i> 성남시</span>
               <span class="region-chip"><i class="fas fa-map-pin"></i> 광주시</span>
@@ -1015,10 +751,7 @@
               <span class="region-chip"><i class="fas fa-map-pin"></i> 경기 남부 전 지역</span>
             </div>
             <div style="margin-top:32px;">
-              <a href="tel:01021873789" class="btn btn-primary">
-                <i class="fas fa-phone-alt"></i>
-                지금 바로 전화하기
-              </a>
+              <a href="tel:01021873789" class="btn btn-primary"><i class="fas fa-phone-alt"></i> 지금 바로 전화하기</a>
             </div>
           </div>
 
@@ -1049,9 +782,6 @@
       </div>
     </section>
 
-    <!-- ============================
-         GALLERY SECTION
-    ============================= -->
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery-header reveal">
@@ -1060,132 +790,67 @@
           <p class="section-sub" style="margin:0 auto;">성남·광주·위례 현장에서 직접 작업한 보양닷컴의 시공 현장입니다.</p>
         </div>
 
-        <!-- Main Carousel -->
         <div class="carousel-wrapper reveal" id="carousel">
           <div class="carousel-track" id="carouselTrack">
-
             <div class="carousel-slide">
               <img src="images/after1.jpg" alt="승강기 전체 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>승강기 전체 보양 완료</h4>
-                <p>바닥, 벽면, 출입구까지 깔끔하게 마감한 시공 후 전경</p>
-              </div>
+              <div class="slide-caption"><h4>승강기 전체 보양 완료</h4><p>바닥, 벽면, 출입구까지 깔끔하게 마감한 시공 후 전경</p></div>
             </div>
-
             <div class="carousel-slide">
               <img src="images/after2.jpg" alt="승강기 핸드레일 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>핸드레일 및 측면 보양</h4>
-                <p>이동 중 충격이 잦은 손잡이 주변까지 보호재로 꼼꼼하게 시공</p>
-              </div>
+              <div class="slide-caption"><h4>핸드레일 및 측면 보양</h4><p>이동 중 충격이 잦은 손잡이 주변까지 보호재로 꼼꼼하게 시공</p></div>
             </div>
-
             <div class="carousel-slide">
               <img src="images/after3.jpg" alt="승강기 버튼부 및 안내판 주변 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>버튼부·게시판 주변 보양</h4>
-                <p>버튼 패널, 게시판, 코너 라인까지 정확하게 테이핑 마감</p>
-              </div>
+              <div class="slide-caption"><h4>버튼부·게시판 주변 보양</h4><p>버튼 패널, 게시판, 코너 라인까지 정확하게 테이핑 마감</p></div>
             </div>
-
             <div class="carousel-slide">
               <img src="images/after4.jpg" alt="승강기 도어 및 버튼 패널 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>도어·조작부 주변 보양</h4>
-                <p>문틀과 조작부 주변을 손상 없이 보호하도록 세밀하게 시공</p>
-              </div>
+              <div class="slide-caption"><h4>도어·조작부 주변 보양</h4><p>문틀과 조작부 주변을 손상 없이 보호하도록 세밀하게 시공</p></div>
             </div>
-
             <div class="carousel-slide">
               <img src="images/after5.jpg" alt="승강기 내부 도어 측면 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>도어 측면 및 코너 보양</h4>
-                <p>스크래치가 생기기 쉬운 모서리와 출입문 주변 집중 보호</p>
-              </div>
+              <div class="slide-caption"><h4>도어 측면 및 코너 보양</h4><p>스크래치가 생기기 쉬운 모서리와 출입문 주변 집중 보호</p></div>
             </div>
-
             <div class="carousel-slide">
               <img src="images/after6.jpg" alt="승강기 출입구 바닥 보양 완료" loading="lazy" />
-              <div class="slide-caption">
-                <h4>출입구 바닥 보양</h4>
-                <p>이삿짐 이동 동선까지 고려한 바닥 보호 및 테이핑 마감</p>
-              </div>
+              <div class="slide-caption"><h4>출입구 바닥 보양</h4><p>이삿짐 이동 동선까지 고려한 바닥 보호 및 테이핑 마감</p></div>
             </div>
-
-          </div><!-- /track -->
-
-          <button class="carousel-btn prev" id="prevBtn" aria-label="이전">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="carousel-btn next" id="nextBtn" aria-label="다음">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div><!-- /carousel-wrapper -->
-
-        <!-- Dots -->
-        <div class="carousel-dots" id="carouselDots"></div>
-
-        <!-- Thumbnail Grid -->
-        <div class="thumb-grid" id="thumbGrid">
-          <!-- generated by JS -->
+          </div>
+          <button class="carousel-btn prev" id="prevBtn" aria-label="이전"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="다음"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="thumb-grid" id="thumbGrid"></div>
       </div>
     </section>
 
-    <!-- ============================
-         CTA BANNER
-    ============================= -->
     <section class="cta-banner" id="contact">
       <div class="reveal">
         <h2>지금 바로 무료 견적을 받아보세요!</h2>
-        <p>
-          작업 중에는 전화를 못 받을 수 있으니,<br />
-          <strong style="color:#fff;">문자를 남겨주시면 바로 연락드리겠습니다.</strong>
-        </p>
-        <a href="tel:01021873789" class="cta-number">
-          <i class="fas fa-phone-alt"></i>
-          010-2187-3789
-        </a>
+        <p>작업 중에는 전화를 못 받을 수 있으니,<br /><strong style="color:#fff;">문자를 남겨주시면 바로 연락드리겠습니다.</strong></p>
+        <a href="tel:01021873789" class="cta-number"><i class="fas fa-phone-alt"></i> 010-2187-3789</a>
       </div>
     </section>
-
   </main>
 
-  <!-- ============================
-       FOOTER
-  ============================= -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
-
-        <!-- Brand -->
         <div class="footer-brand">
-          <h3><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:8px;"></i>보양<span>닷컴</span></h3>
+          <h3><img src="images/logo.png" alt="보양닷컴 로고" class="footer-logo"> 보양<span>닷컴</span></h3>
           <p class="tagline">"내 집처럼 꼼꼼하고 깔끔하게"</p>
           <ul class="footer-contact-list">
             <li>
               <i class="fas fa-phone-alt"></i>
-              <div>
-                <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2px;">대표번호</div>
-                <a href="tel:01021873789" class="footer-call-link">010-2187-3789</a>
-              </div>
+              <div><div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2px;">대표번호</div><a href="tel:01021873789" class="footer-call-link">010-2187-3789</a></div>
             </li>
-            <li>
-              <i class="fas fa-comment-alt"></i>
-              <span>문자 주시면 바로 연락드립니다</span>
-            </li>
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
-              <span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span>
-            </li>
+            <li><i class="fas fa-comment-alt"></i><span>문자 주시면 바로 연락드립니다</span></li>
+            <li><i class="fas fa-map-marker-alt"></i><span>성남시 · 광주시 · 위례 신도시<br />경기 남부 전 지역 출장 가능</span></li>
           </ul>
-          <div class="footer-notice">
-            <i class="fas fa-info-circle"></i>
-            작업 중에는 전화를 못 받을 수 있으니, 문자를 남겨주시면 바로 연락드리겠습니다.
-          </div>
+          <div class="footer-notice"><i class="fas fa-info-circle"></i> 작업 중에는 전화를 못 받을 수 있으니, 문자를 남겨주시면 바로 연락드리겠습니다.</div>
         </div>
 
-        <!-- Services -->
         <div class="footer-section">
           <h4>제공 서비스</h4>
           <ul class="footer-list">
@@ -1198,7 +863,6 @@
           </ul>
         </div>
 
-        <!-- Service Area -->
         <div class="footer-section">
           <h4>주요 서비스 지역</h4>
           <ul class="footer-list">
@@ -1210,30 +874,23 @@
             <li><i class="fas fa-map-pin"></i> 경기 남부 전 지역</li>
           </ul>
         </div>
-
-      </div><!-- /footer-grid -->
+      </div>
 
       <div class="footer-bottom">
         <span>© 2025 보양닷컴. All rights reserved.</span>
-        <span>
-          <strong>상호명:</strong> 보양닷컴 &nbsp;|&nbsp;
-          <strong>대표번호:</strong> <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a>
-        </span>
+        <span><strong>상호명:</strong> 보양닷컴 &nbsp;|&nbsp; <strong>대표번호:</strong> <a href="tel:01021873789" style="color:var(--accent-lt);">010-2187-3789</a></span>
       </div>
     </div>
   </footer>
 
-  <!-- ============================
-       JAVASCRIPT
-  ============================= -->
   <script>
-    /* ----- Navbar scroll effect ----- */
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      });
+    }
 
-    /* ----- Scroll Reveal ----- */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1244,80 +901,84 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ----- Carousel ----- */
-    const track  = document.getElementById('carouselTrack');
-    const slides = track.querySelectorAll('.carousel-slide');
-    const total  = slides.length;
-    let current  = 0;
+    const track = document.getElementById('carouselTrack');
+    const slides = track ? track.querySelectorAll('.carousel-slide') : [];
+    const total = slides.length;
+    let current = 0;
     let timer;
 
     const dotsContainer = document.getElementById('carouselDots');
-    slides.forEach((_, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      btn.setAttribute('aria-label', `슬라이드 ${i+1}`);
-      btn.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(btn);
-    });
+    if (dotsContainer) {
+      slides.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', `슬라이드 ${i + 1}`);
+        btn.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(btn);
+      });
+    }
 
     const thumbGrid = document.getElementById('thumbGrid');
-    const thumbImages = [
-      'images/after1.jpg',
-      'images/after2.jpg',
-      'images/after3.jpg',
-      'images/after4.jpg',
-      'images/after5.jpg',
-      'images/after6.jpg'
-    ];
-
-    thumbImages.forEach((src, i) => {
-      const div = document.createElement('div');
-      div.className = 'thumb-item' + (i === 0 ? ' active' : '');
-      div.innerHTML = `<img src="${src}" alt="승강기 보양 시공 사진 ${i + 1}" loading="lazy" />`;
-      div.addEventListener('click', () => goTo(i));
-      thumbGrid.appendChild(div);
-    });
+    const thumbImages = ['images/after1.jpg','images/after2.jpg','images/after3.jpg','images/after4.jpg','images/after5.jpg','images/after6.jpg'];
+    if (thumbGrid) {
+      thumbImages.forEach((src, i) => {
+        const div = document.createElement('div');
+        div.className = 'thumb-item' + (i === 0 ? ' active' : '');
+        div.innerHTML = `<img src="${src}" alt="승강기 보양 시공 사진 ${i + 1}" loading="lazy" />`;
+        div.addEventListener('click', () => goTo(i));
+        thumbGrid.appendChild(div);
+      });
+    }
 
     function updateUI() {
+      if (!track || total === 0) return;
       track.style.transform = `translateX(-${current * 100}%)`;
-      document.querySelectorAll('.carousel-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current)
-      );
-      document.querySelectorAll('.thumb-item').forEach((t, i) =>
-        t.classList.toggle('active', i === current)
-      );
+      document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      document.querySelectorAll('.thumb-item').forEach((t, i) => t.classList.toggle('active', i === current));
     }
 
     function goTo(index) {
+      if (total === 0) return;
       current = (index + total) % total;
       updateUI();
       resetTimer();
     }
-
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
 
-    document.getElementById('nextBtn').addEventListener('click', next);
-    document.getElementById('prevBtn').addEventListener('click', prev);
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    if (nextBtn) nextBtn.addEventListener('click', next);
+    if (prevBtn) prevBtn.addEventListener('click', prev);
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  prev();
+      if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     });
 
     let touchStartX = 0;
     const carouselEl = document.getElementById('carousel');
-    carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    carouselEl.addEventListener('touchend',   e => {
-      const diff = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(diff) > 40) diff < 0 ? next() : prev();
-    });
+    if (carouselEl) {
+      carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      carouselEl.addEventListener('touchend', e => {
+        const diff = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(diff) > 40) diff < 0 ? next() : prev();
+      });
+    }
 
-    function startTimer() { timer = setInterval(next, 4500); }
-    function resetTimer()  { clearInterval(timer); startTimer(); }
+    function startTimer() {
+      if (total > 1) timer = setInterval(next, 4500);
+    }
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearInterval(timer);
+      else resetTimer();
+    });
     startTimer();
 
-    /* ----- Smooth anchor scroll ----- */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
