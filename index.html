@@ -126,6 +126,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      }
+      .logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
     }
     .nav-logo span { color: var(--accent); }
     .nav-logo .dot { color: var(--accent); font-size: .7em; vertical-align: super; }
@@ -817,12 +823,10 @@
   <!-- ============================
        NAVBAR
   ============================= -->
-  <header class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
-        <i class="fas fa-shield-alt" style="color:var(--accent);font-size:1.1rem;"></i>
-        보양<span>닷컴</span>
-      </a>
+  <a href="#" class="nav-logo" aria-label="보양닷컴 홈">
+  <img src="images/logo.png" alt="보양닷컴 로고" class="logo-img">
+  보양<span>닷컴</span>
+</a>
       <a href="tel:01021873789" class="nav-cta">
         <i class="fas fa-phone-alt"></i>
         010-2187-3789
