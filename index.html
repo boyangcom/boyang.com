@@ -110,7 +110,7 @@
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(27,79,138,.1);
-      padding: 12px 0;
+      padding: 8px 0;
       transition: box-shadow var(--transition);
     }
     .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
@@ -120,17 +120,21 @@
       justify-content: space-between;
     }
     .nav-logo {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
       }
-      .logo-img {
-  height: 42px;
-  width: auto;
-  object-fit: contain;
+    .nav-logo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
     }
     .nav-logo span { color: var(--accent); }
