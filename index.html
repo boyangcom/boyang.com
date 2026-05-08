@@ -397,45 +397,61 @@
     }
     .before-after p {
       color: rgba(255,255,255,.75);
-      margin-bottom: 36px;
+      margin-bottom: 30px;
       font-size: .95rem;
     }
-    .ba-grid {
+    .ba-photos {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
     }
-    .ba-box {
-      border-radius: 12px;
-      overflow: hidden;
+    .ba-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .ba-img-wrap {
       position: relative;
-    }
-    .ba-box-inner {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
+      overflow: hidden;
       border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.08);
     }
-    .ba-box-before .ba-box-inner { background: rgba(255,255,255,.07); }
-    .ba-box-after  .ba-box-inner { background: rgba(240,165,0,.15); }
+    .ba-img-wrap img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+    }
     .ba-label {
       position: absolute;
       top: 10px;
       left: 10px;
-      background: rgba(0,0,0,.55);
+      background: rgba(0,0,0,.6);
       color: #fff;
       font-size: .72rem;
-      font-weight: 700;
+      font-weight: 800;
       padding: 3px 10px;
       border-radius: 50px;
       letter-spacing: .06em;
     }
+    .ba-label.after { background: rgba(34,139,34,.8); }
     .ba-arrow {
-      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 72px;
       color: var(--accent-lt);
+      font-weight: 900;
+    }
+    .ba-arrow i { font-size: 2rem; }
+    .ba-arrow span {
+      font-size: .75rem;
+      color: rgba(255,255,255,.7);
+      white-space: nowrap;
     }
 
     /* ===== PROMISE SECTION ===== */
@@ -773,11 +789,9 @@
       .promise-inner  { grid-template-columns: 1fr; gap: 36px; }
       .footer-grid    { grid-template-columns: 1fr 1fr; gap: 36px; }
       .footer-grid > .footer-brand { grid-column: 1 / -1; }
-      .ba-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-      .ba-arrow { transform: rotate(90deg); justify-self: center; }
+      .ba-photos { grid-template-columns: 1fr; }
+      .ba-arrow { flex-direction: row; margin: 6px auto; }
+      .ba-arrow i { transform: rotate(90deg); }
     }
 
     @media (max-width: 600px) {
@@ -786,12 +800,13 @@
       .services       { padding: 70px 0 60px; }
       .promise        { padding: 70px 0; }
       .gallery        { padding: 70px 0; }
-      .before-after   { padding: 36px 22px; }
+      .before-after   { padding: 36px 18px; }
       .footer-grid    { grid-template-columns: 1fr; gap: 32px; }
       .carousel-slide img,
-      .carousel-slide .slide-placeholder { height: 280px; }
+      .carousel-slide .slide-placeholder { height: 330px; }
       .thumb-grid     { grid-template-columns: repeat(3,1fr); gap: 8px; }
-      .ba-box-inner   { height: 130px; }
+      .ba-col { grid-template-columns: 1fr; }
+      .ba-img-wrap img { height: 320px; }
     }
   </style>
 </head>
@@ -934,22 +949,45 @@
 
         <!-- Before / After -->
         <div class="before-after reveal">
-          <h3>🎯 작업 전 · 후 차이를 직접 확인하세요</h3>
-          <p>보양닷컴의 꼼꼼한 작업이 만들어내는 확실한 차이</p>
-          <div class="ba-grid">
-            <div class="ba-box ba-box-before">
-              <div class="ba-box-inner">🏗️</div>
-              <span class="ba-label">BEFORE</span>
+          <h3>🎯 실제 승강기 보양 시공 전 · 후</h3>
+          <p>작업 전 원상태부터 보양 완료 후까지, 보양닷컴의 꼼꼼한 마감 품질을 확인하세요.</p>
+
+          <div class="ba-photos">
+            <div class="ba-col">
+              <div class="ba-img-wrap">
+                <img src="images/before1.jpg" alt="승강기 보양 전 버튼부" loading="lazy" />
+                <span class="ba-label">BEFORE</span>
+              </div>
+              <div class="ba-img-wrap">
+                <img src="images/before2.jpg" alt="승강기 보양 전 내부 벽면" loading="lazy" />
+                <span class="ba-label">BEFORE</span>
+              </div>
+              <div class="ba-img-wrap">
+                <img src="images/before3.jpg" alt="승강기 보양 전 코너부" loading="lazy" />
+                <span class="ba-label">BEFORE</span>
+              </div>
             </div>
-            <div class="ba-arrow">→</div>
-            <div class="ba-box ba-box-after">
-              <div class="ba-box-inner">✨</div>
-              <span class="ba-label">AFTER</span>
+
+            <div class="ba-arrow">
+              <i class="fas fa-arrow-right"></i>
+              <span>보양 시공</span>
+            </div>
+
+            <div class="ba-col">
+              <div class="ba-img-wrap">
+                <img src="images/after1.jpg" alt="승강기 보양 후 전체 전경" loading="lazy" />
+                <span class="ba-label after">AFTER</span>
+              </div>
+              <div class="ba-img-wrap">
+                <img src="images/after3.jpg" alt="승강기 보양 후 코너 마감" loading="lazy" />
+                <span class="ba-label after">AFTER</span>
+              </div>
+              <div class="ba-img-wrap">
+                <img src="images/after5.jpg" alt="승강기 보양 후 도어 주변 마감" loading="lazy" />
+                <span class="ba-label after">AFTER</span>
+              </div>
             </div>
           </div>
-          <p style="margin-top:20px;font-size:.88rem;color:rgba(255,255,255,.6);">
-            📸 실제 현장 사진은 갤러리 섹션에서 확인하세요
-          </p>
         </div>
       </div>
     </section>
@@ -1024,90 +1062,50 @@
           <div class="carousel-track" id="carouselTrack">
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1B4F8A,#2A6CC4);">
-                🛡️
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">보양 시공 현장 #1</span>
-              </div>
+              <img src="images/after1.jpg" alt="승강기 전체 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>세대 내부 바닥 보양 작업</h4>
-                <p>PP 보드를 활용한 철저한 바닥 보호 시공</p>
+                <h4>승강기 전체 보양 완료</h4>
+                <p>바닥, 벽면, 출입구까지 깔끔하게 마감한 시공 후 전경</p>
               </div>
             </div>
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5c3a,#28835a);">
-                🧹
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">입주 청소 현장 #1</span>
-              </div>
+              <img src="images/after2.jpg" alt="승강기 핸드레일 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>신규 아파트 입주 청소</h4>
-                <p>구석구석 먼지 제거 및 고품격 클리닝</p>
+                <h4>핸드레일 및 측면 보양</h4>
+                <p>이동 중 충격이 잦은 손잡이 주변까지 보호재로 꼼꼼하게 시공</p>
               </div>
             </div>
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#4a2c8a,#6b4cba);">
-                🏗️
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">승강기 보양 작업</span>
-              </div>
+              <img src="images/after3.jpg" alt="승강기 버튼부 및 안내판 주변 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>승강기 내부 완벽 보양</h4>
-                <p>이사·공사 중 승강기 스크래치 방지 작업</p>
+                <h4>버튼부·게시판 주변 보양</h4>
+                <p>버튼 패널, 게시판, 코너 라인까지 정확하게 테이핑 마감</p>
               </div>
             </div>
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#8a4a1a,#c47028);">
-                🏢
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">복도 보양 작업</span>
-              </div>
+              <img src="images/after4.jpg" alt="승강기 도어 및 버튼 패널 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>공용 복도 보양 시공</h4>
-                <p>세대 외부 복도까지 꼼꼼한 보호 처리</p>
+                <h4>도어·조작부 주변 보양</h4>
+                <p>문틀과 조작부 주변을 손상 없이 보호하도록 세밀하게 시공</p>
               </div>
             </div>
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a5879,#207ba8);">
-                ✨
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">이사 청소 완료</span>
-              </div>
+              <img src="images/after5.jpg" alt="승강기 내부 도어 측면 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>이사 후 완벽 청소 완료</h4>
-                <p>새집으로 쾌적한 새 출발 준비 완성</p>
+                <h4>도어 측면 및 코너 보양</h4>
+                <p>스크래치가 생기기 쉬운 모서리와 출입문 주변 집중 보호</p>
               </div>
             </div>
 
             <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#3a5a1a,#5a8a28);">
-                🏠
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">위례 현장 시공</span>
-              </div>
+              <img src="images/after6.jpg" alt="승강기 출입구 바닥 보양 완료" loading="lazy" />
               <div class="slide-caption">
-                <h4>위례 신도시 보양 시공</h4>
-                <p>위례 지역 대단지 아파트 전문 시공</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#5a1a1a,#8a2828);">
-                🔨
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">성남 현장 시공</span>
-              </div>
-              <div class="slide-caption">
-                <h4>성남시 보양·청소 복합 시공</h4>
-                <p>인테리어 보양부터 입주 청소까지 원스톱</p>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="slide-placeholder" style="background:linear-gradient(135deg,#1a3a5a,#2856a8);">
-                💯
-                <span style="font-size:1rem;font-weight:700;margin-top:8px;">완공 후 점검</span>
-              </div>
-              <div class="slide-caption">
-                <h4>시공 후 꼼꼼한 마무리 점검</h4>
-                <p>모든 작업 후 최종 품질 점검으로 완벽 마무리</p>
+                <h4>출입구 바닥 보양</h4>
+                <p>이삿짐 이동 동선까지 고려한 바닥 보호 및 테이핑 마감</p>
               </div>
             </div>
 
@@ -1250,7 +1248,6 @@
     let current  = 0;
     let timer;
 
-    // Build dots
     const dotsContainer = document.getElementById('carouselDots');
     slides.forEach((_, i) => {
       const btn = document.createElement('button');
@@ -1260,27 +1257,23 @@
       dotsContainer.appendChild(btn);
     });
 
-    // Build thumbnails
     const thumbGrid = document.getElementById('thumbGrid');
-    const thumbEmojis = ['🛡️','🧹','🏗️','🏢','✨','🏠','🔨','💯'];
-    const thumbColors = [
-      'linear-gradient(135deg,#1B4F8A,#2A6CC4)',
-      'linear-gradient(135deg,#1a5c3a,#28835a)',
-      'linear-gradient(135deg,#4a2c8a,#6b4cba)',
-      'linear-gradient(135deg,#8a4a1a,#c47028)',
-      'linear-gradient(135deg,#1a5879,#207ba8)',
-      'linear-gradient(135deg,#3a5a1a,#5a8a28)',
-      'linear-gradient(135deg,#5a1a1a,#8a2828)',
-      'linear-gradient(135deg,#1a3a5a,#2856a8)',
+    const thumbImages = [
+      'images/after1.jpg',
+      'images/after2.jpg',
+      'images/after3.jpg',
+      'images/after4.jpg',
+      'images/after5.jpg',
+      'images/after6.jpg'
     ];
-    // Only show first 6 thumbs in grid (2 rows × 3 cols)
-    for (let i = 0; i < Math.min(total, 6); i++) {
+
+    thumbImages.forEach((src, i) => {
       const div = document.createElement('div');
       div.className = 'thumb-item' + (i === 0 ? ' active' : '');
-      div.innerHTML = `<div class="thumb-placeholder" style="background:${thumbColors[i]};font-size:2rem;">${thumbEmojis[i]}</div>`;
+      div.innerHTML = `<img src="${src}" alt="승강기 보양 시공 사진 ${i + 1}" loading="lazy" />`;
       div.addEventListener('click', () => goTo(i));
       thumbGrid.appendChild(div);
-    }
+    });
 
     function updateUI() {
       track.style.transform = `translateX(-${current * 100}%)`;
@@ -1304,22 +1297,19 @@
     document.getElementById('nextBtn').addEventListener('click', next);
     document.getElementById('prevBtn').addEventListener('click', prev);
 
-    // Keyboard support
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  prev();
       if (e.key === 'ArrowRight') next();
     });
 
-    // Touch / swipe support
     let touchStartX = 0;
     const carouselEl = document.getElementById('carousel');
     carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     carouselEl.addEventListener('touchend',   e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diff) > 40) diff < 0 ? next() : prev();
     });
 
-    // Auto-play
     function startTimer() { timer = setInterval(next, 4500); }
     function resetTimer()  { clearInterval(timer); startTimer(); }
     startTimer();
